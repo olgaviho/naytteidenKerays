@@ -7,6 +7,6 @@ Tutkimuksessa kenttätutkija kirjaa ylös havaintoja (esim haju,sinilevätilanne
 ## Dokumentaatio
 
 [Heroku]()
-[User stories]()
-[Tietokantakaaviohahmotelma]()
+[User stories](https://github.com/olgaviho/naytteidenKerays/blob/master/documentation/userstories.md)
+[Tietokantakaaviohahmotelma](https://github.com/olgaviho/naytteidenKerays/blob/master/documentation/tietokantakaavio.md)
 
