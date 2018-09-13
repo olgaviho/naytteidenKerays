@@ -1,6 +1,10 @@
 from application import app, db
-from flask import render_template, request
+from flask import redirect, render_template, request, url_for
 from application.naturesites.models import NatureSite
+
+@app.route("/naturesites", methods=["GET"])
+def naturesites_index():
+    return render_template("naturesites/list.html", naturesites = NatureSite.query.all())
 
 @app.route("/naturesites/new/")
 def naturesites_form():
@@ -13,4 +17,4 @@ def naturesites_create():
     db.session().add(n)
     db.session().commit()
   
-    return "hello world!"
+    return redirect(url_for("naturesites_index"))

@@ -12,5 +12,5 @@ Saatavilla on myös yhteenveto tutkijoiden toiminnasta.
 
 ## Kirjautunut käyttäjä
 
-Kirjautunut käyttäjä voi lisätä uusia luontokohteita sekä lisätä luoduille luontokohteille uuden kenttätutkimuksen. Lisäksi kenttätutkimukseen voi lisätä näytteitä. Omia näytteitä ja kenttätutkimuksia voi myös muokata. Myös muiden luomiin luontokohteisiin voi lisätä kenttätutkimuksia ja näytteitä. Käyttäjä voi myös kommentoida luontokohteita ja kenttätutkimuksia. 
+Kirjautunut käyttäjä voi lisätä uusia luontokohteita sekä lisätä luoduille luontokohteille uuden kenttätutkimuksen. Lisäksi kenttätutkimukseen voi lisätä näytteitä. Omia kenttätutkimuksia voi myös muokata. Myös muiden luomiin luontokohteisiin voi lisätä kenttätutkimuksia ja näytteitä. Käyttäjä voi myös kommentoida luontokohteita ja kenttätutkimuksia. 
 
