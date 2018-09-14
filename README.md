@@ -6,9 +6,13 @@ Tutkimuksessa kenttätutkija kirjaa ylös havaintoja (esim haju,sinilevätilanne
 
 Kenttätutkimuksia voi myös kommentoida.
 
+Tällä hetkellä on mahdollista luoda luontokohteita ja niille kuvauksia, sekä päivittää kuvauksen tietoja.
+
 ## Dokumentaatio
 
-[Heroku]()
-[User story]()
-[Tietokantakaaviohahmotelma]()
+[Heroku](https://tsoha-naytteidenkerays.herokuapp.com/)
+
+[User story](https://github.com/olgaviho/naytteidenKerays/blob/master/documentation/userstories.md)
+
+[Tietokantakaaviohahmotelma](https://github.com/olgaviho/naytteidenKerays/blob/master/documentation/tietokantakaavio.md)
 

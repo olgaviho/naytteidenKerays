@@ -1,18 +1,14 @@
 {% extends "layout.html" %}
   
 {% block body %}
-  <table>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Send</th>
-    </tr>
-    <tr>
-      <form method="POST" action="{{ url_for('naturesites_create') }}">
-        <input type="text" name="name"/>
-        <input type="text" name="description"/>
-        <input type="submit" value="Add a new naturesite"/>
-      </form>
-    </tr>
-  <table/>
+  <tr>
+    <th>Name and description</th>
+  </tr>
+  <tr>
+    <form method="POST" action="{{ url_for('naturesites_create') }}">
+      <input type="text" name="name"/>
+      <input type="text" name="description"/>
+      <input type="submit" value="Add a new naturesite"/>
+    </form>
+  </tr>
 {% endblock %}
