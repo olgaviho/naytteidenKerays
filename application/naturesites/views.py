@@ -10,9 +10,18 @@ def naturesites_index():
 def naturesites_form():
     return render_template("naturesites/new.html")
 
+@app.route("/naturesites/<naturesite_id>/", methods=["POST"])
+def naturesite_change_description(naturesite_id):
+
+    t = NatureSite.query.get(naturesite_id)
+    t.description = request.form.get("newdescription")
+    db.session().commit()
+  
+    return redirect(url_for("naturesites_index"))    
+
 @app.route("/naturesites/", methods=["POST"])
 def naturesites_create():
-    n = NatureSite(request.form.get("name"))
+    n = NatureSite(request.form.get("name"),request.form.get("description"))
 
     db.session().add(n)
     db.session().commit()

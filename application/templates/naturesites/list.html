@@ -3,11 +3,20 @@
 {% block body %}
   <table>
     <tr>
-      <th>NatureSite</th>
+      <th>Nature site</th>
+      <th>Description</th>
+      <th>New description</th>
     </tr>
     {% for naturesite in naturesites %}
     <tr>
       <td>{{ naturesite.name }}</td>
+      <td>{{ naturesite.description }}</td>
+      <td>
+        <form method="POST" action="{{ url_for('naturesite_change_description', naturesite_id=naturesite.id) }}">
+          <input type="text" name="newdescription"/>
+          <input type="submit" value="Change description"/>
+        </form>
+      </td>
     </tr>
     {% endfor %}
   </table>
