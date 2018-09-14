@@ -1,3 +1,3 @@
 # Alustava tietokantakaavio
 
-![alt text](https://github.com/olgaviho/naytteidenKerays/blob/master/dokumentointi/pictures/tietokantakaavio.JPG)
+![alt text](https://raw.githubusercontent.com/olgaviho/naytteidenKerays/master/documentation/pictures/tietokantakaavio.JPG)
