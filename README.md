@@ -6,7 +6,7 @@ Tutkimuksessa kenttätutkija kirjaa ylös havaintoja (esim haju, sinilevätilann
 
 Kenttätutkimuksia voi myös kommentoida.
 
-Tällä hetkellä on mahdollista luoda luontokohteita ja niille kuvauksia sekä päivittää kuvauksen tietoja.
+Tällä hetkellä on mahdollista luoda luontokohteita ja niille kuvauksia sekä päivittää kuvauksen tietoja. Lisäksi pystyy luomaan käyttäjän ja kirjautumaan sisään.
 
 ## Dokumentaatio
 
