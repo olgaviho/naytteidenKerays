@@ -1,5 +1,5 @@
 {% extends "layout.html" %}
-  
+
 {% block body %}
 <form method="POST" action="{{url_for('naturesites_create') }}">
   <table>
@@ -20,16 +20,17 @@
     </tr>
     <tr>
       <td>
-          {{ form.description.label }}
+        {{ form.description.label }}
       </td>
       <td>
-          {{ form.description }}
+        {{ form.description }}
       </td>
     </tr>
     <tr>
       <td colspan="3">
-        <input type="submit" value="Add a new nature site"/>
+        <input type="submit" value="Add a new nature site" />
       </td>
     </tr>
-  </form>
+  </table>
+</form>
 {% endblock %}
