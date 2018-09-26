@@ -7,3 +7,10 @@ class NatureSiteForm(FlaskForm):
 
     class Meta:
         csrf = False
+        
+class NatureSiteEditForm(FlaskForm):
+
+    description = StringField(" Edit description")
+
+    class Meta:
+        csrf = False        

@@ -12,10 +12,8 @@
       <td>{{ naturesite.name }}</td>
       <td>{{ naturesite.description }}</td>
       <td>
-        <form method="POST" action="{{ url_for('naturesite_change_description', naturesite_id=naturesite.id) }}">
-          <input type="text" name="newdescription"/>
-          <input type="submit" value="Change description"/>
-        </form>
+        <form method="GET" action="{{ url_for('naturesite_edit', naturesite_id=naturesite.id) }}">
+          <input type="submit" value="Edit nature site"/>
       </td>
     </tr>
     {% endfor %}

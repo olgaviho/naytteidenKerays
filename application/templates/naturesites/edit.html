@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<form method="POST" action="{{ url_for('naturesite_change_description', naturesite_id=naturesite.id) }}">
+    <table>
+        <tr>
+            <td>
+                {{ form.description.label }}
+            </td>
+            <td>
+                {{ form.description }}
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <input type="submit" value="Change description" />
+            </td>
+        </tr>
+    </table>
+</form>
+{% endblock %}
+
+## mistä saan kiinni, mitä luontokohdetta käsitellään?
