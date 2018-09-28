@@ -21,7 +21,7 @@ def naturesites_form():
 def naturesite_change_description(naturesite_id):
 
     t = NatureSite.query.get(naturesite_id)
-    t.description = request.form.get("newdescription")
+    t.description = request.form.get("description")
     db.session().commit()
   
     return redirect(url_for("naturesites_index"))    
@@ -45,4 +45,5 @@ def naturesites_create():
 @app.route("/naturesites/edit/<naturesite_id>/", methods=["GET"])
 @login_required
 def naturesite_edit(naturesite_id):
-    return render_template("naturesites/edit.html", form = NatureSiteEditForm())
+    t = NatureSite.query.get(naturesite_id)
+    return render_template("naturesites/edit.html",  form = NatureSiteEditForm(), naturesite=t)

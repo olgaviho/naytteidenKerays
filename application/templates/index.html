@@ -4,5 +4,20 @@
   <p>
     Näytteiden kerääminen luontokohteista
   </p>
+
+  {% if users_and_naturesites is defined %}
+<p>
+  The current situation:
+</p>
+
+<ul>
+  {% for user in users_and_naturesites %}
+  <li>
+    {{user.id}} {{user.name}} {{user.amount}}
+  </li>
+  {% endfor %}
+</ul>
+
+{% endif %}
   
 {% endblock %}

@@ -2,6 +2,7 @@
 
 {% block body %}
 <form method="POST" action="{{ url_for('naturesite_change_description', naturesite_id=naturesite.id) }}">
+    {{naturesite.description}}
     <table>
         <tr>
             <td>
@@ -20,4 +21,3 @@
 </form>
 {% endblock %}
 
-## mistä saan kiinni, mitä luontokohdetta käsitellään?

@@ -10,6 +10,7 @@ class NatureSite(Base):
 
     account_id = db.Column(db.Integer, db.ForeignKey('account.id'), nullable=False)
 
+    reports = db.relationship("Report", backref='nature_site', lazy=True)
 
     def __init__(self, name, description):
         self.name = name
