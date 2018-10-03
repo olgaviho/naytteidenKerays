@@ -1,16 +1,12 @@
-# User story
-
-Tällä hetkellä sovellukseen ei pysty vielä kirjautumaan. Ainoastaan tietokannasta voi hakea luontokohteita ja sitä voi päivittää.
+# User stories
 
 Tässä tapaukset, jotka kuuluvat tulevalle sovellukselle
 
 ## Käyttäjä, joka ei ole kirjautunut
 
-Käyttäjä, joka ei ole kirjautunut pystyy katsomaan luontokohteita sen kenttätutkimuksia ja näytteitä. Luontokohteiden historiatietojen katsominen on myös mahdollista.
-
-Saatavilla on myös yhteenveto tutkijoiden toiminnasta.
+Käyttäjä, joka ei ole kirjautunut, pystyy katsomaan luontokohteita. Saatavilla on myös yhteenveto tutkijoiden luomista raporteista.
 
 ## Kirjautunut käyttäjä
 
-Kirjautunut käyttäjä voi lisätä uusia luontokohteita sekä lisätä luoduille luontokohteille uuden kenttätutkimuksen. Lisäksi kenttätutkimukseen voi lisätä näytteitä. Omia kenttätutkimuksia voi myös muokata. Myös muiden luomiin luontokohteisiin voi lisätä kenttätutkimuksia ja näytteitä. Käyttäjä voi myös kommentoida luontokohteita ja kenttätutkimuksia. 
+Kirjautunut käyttäjä voi lisätä uusia luontokohteita sekä lisätä luoduille luontokohteille uuden raportin. Luontokohteita voi myös muokata. Myös muiden luomiin luontokohteisiin voi lisätä kenttätutkimuksia.
 
