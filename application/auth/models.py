@@ -22,6 +22,9 @@ class User(Base):
     def get_id(self):
         return self.id
 
+    def get_name(self):
+        return self.name    
+
     def is_active(self):
         return True
 
@@ -42,4 +45,17 @@ class User(Base):
         response = []
         for row in res:
             response.append({"id":row[0], "name": row[1], "amount": row[2]})    
-        return response              
+        return response     
+
+    @staticmethod
+    def how_many_reports_users_have_created():
+        stmt = text("SELECT Account.name, COUNT(Report.id) FROM Account"
+                    " LEFT JOIN Report ON Report.account_id = Account.id"
+                    " GROUP BY Account.id") 
+    
+        res=db.engine.execute(stmt)
+    
+        response = []
+        for row in res:
+            response.append({"name": row[0], "amount": row[1]})    
+        return response                  

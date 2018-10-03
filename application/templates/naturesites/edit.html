@@ -18,6 +18,33 @@
             </td>
         </tr>
     </table>
-</form>
-{% endblock %}
 
+    <p>
+    Reports
+    </p>
+
+    
+    {% for report in naturesite.reports %}
+    <table>
+        <tr>
+            <td>
+                {{ report.name }}
+            </td>
+            <td>
+                {{ report.account_id }}
+            </td>
+            <td>
+                {{ report.description }}
+            </td>
+        </tr>
+    </table>
+    {% endfor %}
+</form>
+
+<form method="GET" action="{{ url_for('report_createform', naturesite_id = naturesite.id) }}">
+    <input type="submit" value="Create new report" />
+</form>
+
+
+
+{% endblock %}

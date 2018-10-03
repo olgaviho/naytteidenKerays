@@ -10,7 +10,7 @@ class NatureSiteForm(FlaskForm):
         
 class NatureSiteEditForm(FlaskForm):
 
-    description = StringField(" Edit description")
+    description = StringField("Edit description")
 
     class Meta:
         csrf = False        

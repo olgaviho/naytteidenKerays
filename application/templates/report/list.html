@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Account id</th>
+    <th>Nature site id</th>
+  </tr>
+  {% for Report in reports %}
+  <tr>
+    <td>{{ report.title }}</td>
+    <td>{{ report.description }}</td>
+    <td>{{ get_name(User.query.get(report.account_id)) }}</td>
+    <td>{{ report.naturesite_id }}</td>
+  </tr>
+  {% endfor %}
+</table>
+{% endblock %}

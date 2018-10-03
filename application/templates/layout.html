@@ -10,7 +10,7 @@
 
 <body>
   <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
-    <a class="navbar-brand" href="#">naytteidenKerays</a>
+    <a class="navbar-brand" href="#">Nature sites and Reports</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
       aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -23,6 +23,12 @@
         <li class="nav-item">
           <a class="nav-link" href="{{ url_for('naturesites_form') }} ">Add a nature site</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('index') }} ">Front page</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('report_index') }} ">All reports</a>
+          </li>
       </ul>
       <div class="form-inline mt-2 mt-md-0">
         {% if current_user.is_authenticated %}

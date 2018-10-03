@@ -10,7 +10,6 @@ class Report(Base):
     name = db.Column(db.String(144), nullable=False)
     username = db.Column(db.String(144), nullable=False)
 
-    
     account_id = db.Column(db.Integer, db.ForeignKey('account.id'), nullable=False)
     naturesite_id = db.Column(db.Integer, db.ForeignKey('nature_site.id'), nullable=False)
 

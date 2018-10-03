@@ -38,12 +38,19 @@ def auth_create():
         return render_template("auth/registform.html", form2 = form2)
 
 
+    pass1 = form2.password.data
+    pass2 = form2.password2.data    
+
+    if pass1 != pass2:
+        return render_template("auth/registform.html", form2 = form2,
+                                error = "Passwords don't match")
+
     u = User(form2.name.data, form2.username.data, form2.password.data)
 
     sameuser = User.query.filter_by(username=form2.username.data).first()
     if sameuser:
         return render_template("auth/registform.html", form2 = form2,
-                                error = "Username must be unique")
+                                error = "Username must be unique")                            
 
     db.session().add(u)
     db.session().commit()

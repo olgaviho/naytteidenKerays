@@ -1,23 +1,28 @@
 {% extends "layout.html" %}
 
 {% block body %}
-  <p>
-    Näytteiden kerääminen luontokohteista
-  </p>
+<p>
+  Nature sites and reports
+</p>
 
-  {% if users_and_naturesites is defined %}
+{% if users_and_reports is defined %}
 <p>
   The current situation:
 </p>
 
-<ul>
-  {% for user in users_and_naturesites %}
-  <li>
-    {{user.id}} {{user.name}} {{user.amount}}
-  </li>
+<table>
+  <tr>
+    <th>User</th>
+    <th>Number of created reports</th>
+    <th></th>
+  </tr>
+  {% for user in users_and_reports %}
+  <tr>
+    <td> {{user.name}}</td>
+    <td> {{user.amount}}</td>
+  </tr>
   {% endfor %}
-</ul>
+</table>
 
 {% endif %}
-  
 {% endblock %}
