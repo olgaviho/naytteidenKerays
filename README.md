@@ -1,10 +1,12 @@
 # Sovellus luontokohteiden tarkkailuun
 
-Kyseessä on erilaisten luontokohteiden ympäristön seuraamisen helpottamiseen kehitetty sovellus. Luontokohteisiin liittyy nimi, kuvaus ja raportit. Kuvausta voi muokata, mikäli on itse luonut alkuperäisen luontokohteen.
+Kyseessä on erilaisten luontokohteiden ympäristön seuraamisen helpottamiseen kehitetty sovellus. Luontokohteisiin liittyy nimi, kuvaus ja raportit. Kuvausta voi muokata, mikäli on itse luonut alkuperäisen luontokohteen järjestelmään.
 
-Tutkimuksessa tutkija kirjaa ylös havaintoja esimerkiksi haju, sinilevätilanne, nähdyt lintulajit. Nämä muodostavat kenttätutkimuksen.  Omia kenttätutkimuksia voi myös muokata, sekä poistaa.
+Raportilla on otsikko, jontka jälkeen käyttäjä kirjaa ylös havaintoja esimerkiksi haju, sinilevätilanne, nähdyt lintulajit. Omia rapotteja voi myös muokata jälkikäteen sekä poistaa.
 
-Kenttätutkimuksia voi myös kommentoida. 
+Sovelluksessa voi katsoa yhteenvetoja kaikista luoduista raporteista.
+
+Raportteja voi myös kommentoida. 
 
 ## Dokumentaatio
 
