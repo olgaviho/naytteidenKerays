@@ -1,12 +1,10 @@
-# Sovellus näytteiden keräämiseen luontokohteista
+# Sovellus luontokohteiden tarkkailuun
 
-Kyseessä on erilaisten luontokohteiden seuraamisen helpottamiseen kehitetty sovellus. Luontokohteisiin liittyy nimi, kuvaus, sijaintitiedot ja kenttätutkimukset. Sijaintitietoihin liittyy tarkat koordinaatit ja maamerkkitietoja. 
+Kyseessä on erilaisten luontokohteiden ympäristön seuraamisen helpottamiseen kehitetty sovellus. Luontokohteisiin liittyy nimi, kuvaus ja raportit. Kuvausta voi muokata, mikäli on itse luonut alkuperäisen luontokohteen.
 
-Tutkimuksessa kenttätutkija kirjaa ylös havaintoja (esim haju, sinilevätilanne) ja tietoja kohteesta. Nämä muodostavat kenttätutkimuksen. Lisäksi tutkija ottaa yhden tai useampia näytteitä kenttätutkimukseen. Näytteisiin voidaan liittää kuvailutietoa sekä konkreettisia arvoja. Omiin kenttätutkimuksiin pystyy myöhemmin lisäämään näytteitä, kun näytetutkimuksen tulokset valmistuvat. Omia kenttätutkimuksia voi myös muokata.
+Tutkimuksessa tutkija kirjaa ylös havaintoja esimerkiksi haju, sinilevätilanne, nähdyt lintulajit. Nämä muodostavat kenttätutkimuksen.  Omia kenttätutkimuksia voi myös muokata, sekä poistaa.
 
-Kenttätutkimuksia voi myös kommentoida.
-
-Tällä hetkellä on mahdollista luoda luontokohteita ja niille kuvauksia sekä päivittää kuvauksen tietoja. Lisäksi pystyy luomaan käyttäjän ja kirjautumaan sisään.
+Kenttätutkimuksia voi myös kommentoida. 
 
 ## Dokumentaatio
 
