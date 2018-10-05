@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block body %}
-<form method="POST" action="{{url_for('report_create', naturesite_id=naturesite_id) }}">
+<form method="POST" action="{{url_for('report_create', naturesite_id=naturesite.id) }}">
   <table>
     <tr>
       <td>

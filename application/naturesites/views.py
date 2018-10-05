@@ -6,6 +6,7 @@ from flask_login import login_required, current_user
 from application.naturesites.models import NatureSite
 from application.naturesites.forms import NatureSiteForm
 from application.naturesites.forms import NatureSiteEditForm
+from application.report.forms import ReportEditForm
 
 @app.route("/naturesites", methods=["GET"])
 def naturesites_index():
@@ -42,8 +43,8 @@ def naturesites_create():
   
     return redirect(url_for("naturesites_index"))
 
-@app.route("/naturesites/edit/<naturesite_id>/", methods=["GET"])
+@app.route("/naturesites/edit/<naturesite_id>", methods=["GET"])
 @login_required
 def naturesite_edit(naturesite_id):
     t = NatureSite.query.get(naturesite_id)
-    return render_template("naturesites/edit.html",  form = NatureSiteEditForm(), naturesite=t)
+    return render_template("naturesites/edit.html",  form = NatureSiteEditForm(), form2=ReportEditForm(), naturesite=t)

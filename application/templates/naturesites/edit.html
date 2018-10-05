@@ -18,31 +18,48 @@
             </td>
         </tr>
     </table>
-
-    <p>
-    Reports
-    </p>
-
-    
-    {% for report in naturesite.reports %}
-    <table>
-        <tr>
-            <td>
-                {{ report.name }}
-            </td>
-            <td>
-                {{ report.account_id }}
-            </td>
-            <td>
-                {{ report.description }}
-            </td>
-        </tr>
-    </table>
-    {% endfor %}
 </form>
+<p>
+    Reports
+</p>
+<table>
+    <tr>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Description</th>
+        <th>Change Description</th>
+        <th>Delete</th>
+    </tr>
+    {% for report in naturesite.reports %}
+    <tr>
+        <td>
+            {{ report.title }}
+        </td>
+        <td>
+            {{ report.account_id }}
+        </td>
+        <td>
+            {{ report.description }}
+        </td>
+        <td>
+            <form method="POST" action="{{ url_for('report_change_description', report_id = report.id, naturesite_id = naturesite.id) }}">
+                    
+            {{ form2.description }}
+            <input type="submit" value="Change description" />
+            </form>
+        </td>
+        <td>
+            <form method="POST" action="{{ url_for('delete_report', report_id = report.id, naturesite_id = naturesite.id) }}">
+                    <input type="submit" value="Delete" />
+            </form>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+
 
 <form method="GET" action="{{ url_for('report_createform', naturesite_id = naturesite.id) }}">
-    {{naturesite.id}}
     <input type="submit" value="Create new report" />
 </form>
 

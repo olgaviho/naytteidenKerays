@@ -7,3 +7,11 @@ class NewReportForm(FlaskForm):
 
     class Meta:
         csrf = False
+
+
+class ReportEditForm(FlaskForm):
+
+    description = StringField("Edit description")
+
+    class Meta:
+        csrf = False         

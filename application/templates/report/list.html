@@ -1,20 +1,25 @@
 {% extends "layout.html" %}
 
 {% block body %}
+
+{% if reports is defined %}
+
 <table>
   <tr>
     <th>Title</th>
+    <th>Author</th>
     <th>Description</th>
-    <th>Account id</th>
-    <th>Nature site id</th>
+    <th>Nature site</th>
   </tr>
-  {% for Report in reports %}
+  {% for report in reports %}
   <tr>
-    <td>{{ report.title }}</td>
-    <td>{{ report.description }}</td>
-    <td>{{ get_name(User.query.get(report.account_id)) }}</td>
-    <td>{{ report.naturesite_id }}</td>
+    <td> {{report.title}}</td>
+    <td> {{report.author}}</td>
+    <td> {{report.description}}</td>
+    <td> {{report.naturesite}}</td>
   </tr>
   {% endfor %}
 </table>
+
+{% endif %}
 {% endblock %}

@@ -7,12 +7,25 @@ class Report(Base):
 
     __tablename__ = "report"
 
-    name = db.Column(db.String(144), nullable=False)
-    username = db.Column(db.String(144), nullable=False)
+    title = db.Column(db.String(144), nullable=False)
+    description = db.Column(db.String(144), nullable=False)
 
     account_id = db.Column(db.Integer, db.ForeignKey('account.id'), nullable=False)
     naturesite_id = db.Column(db.Integer, db.ForeignKey('nature_site.id'), nullable=False)
 
-    def __init__(self, name, description):
-        self.name = name
+    def __init__(self, title, description):
+        self.title = title
         self.description = description
+
+    @staticmethod
+    def allreports():
+        stmt = text("SELECT Report.title, Account.name, Report.description, Nature_site.name FROM Report"
+                    " LEFT JOIN Account ON Report.account_id = Account.id"
+                    " LEFT JOIN Nature_site ON Report.naturesite_id = Nature_site.id") 
+    
+        res=db.engine.execute(stmt)
+    
+        response = []
+        for row in res:
+            response.append({"title": row[0], "author": row[1], "description": row[2], "naturesite": row[3]})    
+        return response     
