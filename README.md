@@ -11,6 +11,7 @@ Raportteja voi myös kommentoida.
 ## Dokumentaatio
 
 [Heroku](https://tsoha-naytteidenkerays.herokuapp.com/)
+(käyttäjä: username: _hello_, password: _world_)
 
 [User story](https://github.com/olgaviho/naytteidenKerays/blob/master/documentation/userstories.md)
 
