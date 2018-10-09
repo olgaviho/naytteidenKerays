@@ -15,10 +15,3 @@ class NatureSite(Base):
     def __init__(self, name, description):
         self.name = name
         self.description = description
-     
-    
-    def get_name(self):
-        return self.name
-
-    def get_reports(self):
-        return self.reports
