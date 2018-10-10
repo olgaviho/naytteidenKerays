@@ -1,7 +1,7 @@
-from application import app, db
+from application import app, db, login_manager, login_required
 
 from flask import redirect, render_template, request, url_for
-from flask_login import login_required, current_user
+from flask_login import current_user
 
 from application.report.models import Report
 from application.naturesites.models import NatureSite
@@ -9,14 +9,14 @@ from application.report.forms import NewReportForm
 from application.auth.models import User
 
 @app.route("/naturesites/edit/<naturesite_id>/report/new/", methods=["GET"])
-@login_required
+@login_required(role="ADMIN")
 def report_createform(naturesite_id):
     t = NatureSite.query.get(naturesite_id)
     return render_template("report/newreport.html", form = NewReportForm(), naturesite=t)
 
 
 @app.route("/naturesites/edit/<naturesite_id>/", methods=["POST", "GET"])
-@login_required
+@login_required(role="ADMIN")
 def report_create(naturesite_id):
     form = NewReportForm(request.form)
 
@@ -39,10 +39,14 @@ def report_index():
 
 
 @app.route("/naturesites/edit/<naturesite_id>/changedis/<report_id>/", methods=["POST"])
-@login_required
+@login_required(role="ADMIN")
 def report_change_description(naturesite_id, report_id):
 
     r = Report.query.get(report_id)
+
+    if r.account_id != current_user.id:
+        return login_manager.unauthorized()
+
     r.description = request.form.get("description")
     db.session().commit()
   
@@ -50,10 +54,13 @@ def report_change_description(naturesite_id, report_id):
 
 
 @app.route("/naturesites/edit/<naturesite_id>/delete/<report_id>/", methods=["POST"])
-@login_required
+@login_required(role="ADMIN")
 def delete_report( naturesite_id, report_id):
 
     r = Report.query.get(report_id)
+
+    if r.account_id != current_user.id:
+        return login_manager.unauthorized()
 
     db.session.delete(r)
     db.session().commit()

@@ -13,6 +13,8 @@ class Report(Base):
     account_id = db.Column(db.Integer, db.ForeignKey('account.id'), nullable=False)
     naturesite_id = db.Column(db.Integer, db.ForeignKey('nature_site.id'), nullable=False)
 
+    comments = db.relationship("Comment", backref='report', lazy = True)
+
     def __init__(self, title, description):
         self.title = title
         self.description = description

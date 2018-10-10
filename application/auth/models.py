@@ -13,6 +13,7 @@ class User(Base):
 
     naturesites = db.relationship("NatureSite", backref='account', lazy=True)
     reports = db.relationship("Report", backref='account', lazy=True)
+    comment = db.relationship("Comment", backref='account', lazy = True)
 
     def __init__(self, name, username, password):
         self.name = name
@@ -30,6 +31,10 @@ class User(Base):
 
     def is_authenticated(self):
         return True    
+
+    def roles(self):
+        return ["ADMIN"]
+
 
     @staticmethod
     def how_many_naturesites_users_have():

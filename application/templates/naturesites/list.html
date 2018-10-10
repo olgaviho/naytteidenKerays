@@ -12,9 +12,11 @@
     <td>{{ naturesite.name }}</td>
     <td>{{ naturesite.description }}</td>
     <td>
-      <form method="GET" action="{{ url_for('naturesite_edit', naturesite_id=naturesite.id) }}">
+      {% if current_user.is_authenticated %}
+      <form method="GET" action="{{ url_for('naturesite_edit', naturesite_id = naturesite.id) }}">
         <input type="submit" value="Edit nature site" />
       </form>
+      {% endif %}
     </td>
   </tr>
   {% endfor %}
