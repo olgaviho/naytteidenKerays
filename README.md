@@ -6,7 +6,7 @@ Raportilla on otsikko, jontka jälkeen käyttäjä kirjaa ylös havaintoja esime
 
 Sovelluksessa voi katsoa yhteenvetoja kaikista luoduista raporteista.
 
-Raportteja voi myös kommentoida. 
+Raportteja voi myös kommentoida. Omia kommentteja voi poistaa ja muokata jälkikäteen.
 
 ## Dokumentaatio
 
