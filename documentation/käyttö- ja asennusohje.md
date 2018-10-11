@@ -24,7 +24,7 @@ Luontokohteita pääsee selaamaan, vaikka ei olisi kirjautunut sisään järjest
 ## Raporttien selaaminen <h7> 
 Raportteja pääsee selaamaan, vaikka ei olisi kirjautunut sisään järjestelmään. Valitsemalla ylhäältä _All reports_ näkee kaikki luodut raportit..
 
-##Seuraavat toiminnot ovat vain kirjatuneille käyttäjille: <h8>
+## Seuraavat toiminnot ovat vain kirjatuneille käyttäjille: <h8>
 
 ## Luontokohteen luominen <h9>
 Uuden luontokohteen voi luoda valitsemalla ylhäällä olevasta valikosta _Add a nature site_. Luontokohteelle pitää antaa nimi sekä kuvaus ja sen jälkeen klikata painiketta _Add a new nature site_.
