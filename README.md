@@ -17,6 +17,6 @@ Raportteja voi myös kommentoida.
 
 [Tietokantakaaviohahmotelma](https://github.com/olgaviho/naytteidenKerays/blob/master/documentation/tietokantakaavio.md)
 
-[käyttö- ja asennusohje](https://github.com/olgaviho/naytteidenKerays/blob/master/documentation/käyttö- ja asenusohje.md)
+[käyttö- ja asennusohje](https://github.com/olgaviho/naytteidenKerays/blob/master/documentation/kayttoohje.md)
 
 
