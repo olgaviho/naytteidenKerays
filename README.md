@@ -13,9 +13,9 @@ Raportteja voi myös kommentoida.
 [Heroku](https://tsoha-naytteidenkerays.herokuapp.com/)
 (käyttäjä: username: _saapas_, password: _saara2_)
 
-[User story](https://github.com/olgaviho/naytteidenKerays/blob/master/documentation/userstories.md)
+[Käyttötapaukset](https://github.com/olgaviho/naytteidenKerays/blob/master/documentation/userstories.md)
 
-[Tietokantakaaviohahmotelma](https://github.com/olgaviho/naytteidenKerays/blob/master/documentation/tietokantakaavio.md)
+[Tietokantakaavio](https://github.com/olgaviho/naytteidenKerays/blob/master/documentation/tietokantakaavio.md)
 
 [käyttö- ja asennusohje](https://github.com/olgaviho/naytteidenKerays/blob/master/documentation/kayttoohje.md)
 
