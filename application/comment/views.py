@@ -54,9 +54,10 @@ def comment_change_description(report_id, naturesite_id, comment_id):
 
     if c.account_id != current_user.id:
         return login_manager.unauthorized()
- # tässä jotain tapahtuu nyt...
+    
+    # tässä jotain tapahtuu nyt...
     if not form2.validate():
-        return render_template("comment/index.html", form2=form2, form = NewCommentForm, report = r, naturesite=n)    
+        return render_template("comment/index.html", form2=form2, form = NewCommentForm(request.form), report = r, naturesite=n)    
 
     c.text = request.form.get("newtext")
     db.session().commit()

@@ -42,7 +42,6 @@ def naturesites_create():
 
     form = NatureSiteForm(request.form)
 
-    # tässä validointi toimii oikein
     if not form.validate():
         return render_template("naturesites/new.html", form = form)
 
@@ -55,8 +54,11 @@ def naturesites_create():
     return redirect(url_for("naturesites_index"))
 
 @app.route("/naturesites/edit/<naturesite_id>", methods=["GET"])
-@login_required(role="ADMIN")
+@login_required(role="ANY")
 def naturesite_edit(naturesite_id):
+
     t = NatureSite.query.get(naturesite_id)
+    if not t:
+        return "Moi"
 
     return render_template("naturesites/edit.html",  form = NatureSiteEditForm(), naturesite=t)
