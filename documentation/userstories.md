@@ -15,11 +15,11 @@ Tässä tapaukset, jotka kuuluvat tulevalle sovellukselle
 - Kirjautunut käyttäjä voi lisätä uusia luontokohteita.
 - Kirjautunut käyttäjä voi muokata luotujen luontokohteiden kuvausta.
 - Kirjautunut käyttäjä voi lisätä raportin luontokohteelle.
-- Kirjautunut käyttäjä voi muokata lisäämäänsä raporttia. (Ei vielä valmis).
-- Kirjautunut käyttäjä voi poistaa luomansa raportin. (Ei vielä valmis).
+- Kirjautunut käyttäjä voi muokata lisäämäänsä raporttia.
+- Kirjautunut käyttäjä voi poistaa luomansa raportin.
 - Kirjautunut käyttäjä voi kirjautua ulos sovelluksesta.
 
-- Kirjautunut käyttäjä voi kirjoittaa kommentin raporttiin. (Ei vielä olemassa).
-- Kirjautunut käyttäjä voi muokata kommenttiaan. (Ei vielä olemassa).
-- Kirjautunut käyttäjä voi poistaa kommenttinsa. (Ei vielä olemassa).
+- Kirjautunut käyttäjä voi kirjoittaa kommentin raporttiin.
+- Kirjautunut käyttäjä voi muokata kommenttiaan.
+- Kirjautunut käyttäjä voi poistaa kommenttinsa.
 

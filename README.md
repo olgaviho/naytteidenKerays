@@ -6,14 +6,17 @@ Raportilla on otsikko, jontka jälkeen käyttäjä kirjaa ylös havaintoja esime
 
 Sovelluksessa voi katsoa yhteenvetoja kaikista luoduista raporteista.
 
-Raportteja voi myös kommentoida. 
+Raportteja voi myös kommentoida. Omia kommentteja voi poistaa ja muokata jälkikäteen.
 
 ## Dokumentaatio
 
 [Heroku](https://tsoha-naytteidenkerays.herokuapp.com/)
 (käyttäjä: username: _saapas_, password: _saara2_)
 
-[User story](https://github.com/olgaviho/naytteidenKerays/blob/master/documentation/userstories.md)
+[Käyttötapaukset](https://github.com/olgaviho/naytteidenKerays/blob/master/documentation/userstories.md)
 
-[Tietokantakaaviohahmotelma](https://github.com/olgaviho/naytteidenKerays/blob/master/documentation/tietokantakaavio.md)
+[Tietokantakaavio](https://github.com/olgaviho/naytteidenKerays/blob/master/documentation/tietokantakaavio.md)
+
+[käyttö- ja asennusohje](https://github.com/olgaviho/naytteidenKerays/blob/master/documentation/kayttoohje.md)
+
 
