@@ -7,8 +7,8 @@ class Report(Base):
 
     __tablename__ = "report"
 
-    title = db.Column(db.String(144), nullable=False)
-    description = db.Column(db.String(144), nullable=False)
+    title = db.Column(db.String(144), nullable=True)
+    description = db.Column(db.String(144), nullable=True)
 
     account_id = db.Column(db.Integer, db.ForeignKey('account.id'), nullable=False)
     naturesite_id = db.Column(db.Integer, db.ForeignKey('nature_site.id'), nullable=False)

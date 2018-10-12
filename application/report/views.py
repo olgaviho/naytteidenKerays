@@ -7,6 +7,7 @@ from application.report.models import Report
 from application.naturesites.models import NatureSite
 from application.report.forms import NewReportForm
 from application.auth.models import User
+from application.report.forms import ReportEditForm
 
 @app.route("/naturesites/edit/<naturesite_id>/report/new/", methods=["GET"])
 @login_required(role="ADMIN")
@@ -37,10 +38,21 @@ def report_create(naturesite_id):
 def report_index():
     return render_template("report/list.html", reports = Report.allreports()) 
 
-
-@app.route("/naturesites/edit/<naturesite_id>/changedis/<report_id>/", methods=["POST"])
+@app.route("/reports/edit/<report_id>/<naturesite_id>/", methods=["GET"])
 @login_required(role="ADMIN")
-def report_change_description(naturesite_id, report_id):
+def report_edit(report_id, naturesite_id):
+
+    r = Report.query.get(report_id)
+
+    if r.account_id != current_user.id:
+        return login_manager.unauthorized()
+    
+    return render_template("report/edit.html", form=ReportEditForm(), report_id = report_id, naturesite_id= naturesite_id )     
+
+
+@app.route("/naturesites/edit/<report_id>/<naturesite_id>/description/", methods=["POST"])
+@login_required(role="ADMIN")
+def report_change_description(report_id, naturesite_id):
 
     r = Report.query.get(report_id)
 
@@ -53,9 +65,9 @@ def report_change_description(naturesite_id, report_id):
     return redirect(url_for("naturesite_edit", naturesite_id=naturesite_id))
 
 
-@app.route("/naturesites/edit/<naturesite_id>/delete/<report_id>/", methods=["POST"])
+@app.route("/naturesites/edit/<report_id>/<naturesite_id>/delete", methods=["POST"])
 @login_required(role="ADMIN")
-def delete_report( naturesite_id, report_id):
+def delete_report(report_id, naturesite_id):
 
     r = Report.query.get(report_id)
 

@@ -5,19 +5,17 @@
   <tr>
     <th>Nature site</th>
     <th>Description</th>
-    <th></th>
   </tr>
   {% for naturesite in naturesites %}
   <tr>
-    <td>{{ naturesite.name }}</td>
-    <td>{{ naturesite.description }}</td>
     <td>
       {% if current_user.is_authenticated %}
-      <form method="GET" action="{{ url_for('naturesite_edit', naturesite_id = naturesite.id) }}">
-        <input type="submit" value="Edit nature site" />
-      </form>
+      <a href="{{ url_for('naturesite_edit', naturesite_id = naturesite.id) }} "> {{ naturesite.name }}</a>
+      {% else %}
+      {{ naturesite.name }}
       {% endif %}
     </td>
+    <td>{{ naturesite.description }}</td>
   </tr>
   {% endfor %}
 </table>

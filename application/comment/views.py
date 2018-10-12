@@ -18,16 +18,9 @@ def show_comments(report_id, naturesite_id):
     r = Report.query.get(report_id)
     n = NatureSite.query.get(naturesite_id)
 
-    return render_template("comment/index.html", form=CommentEditForm(), report = r, naturesite = n) 
+    return render_template("comment/index.html", form2=CommentEditForm(),form=NewCommentForm(), report = r, naturesite = n) 
 
-@app.route("/comment/<report_id>/<naturesite_id>/new/", methods=["GET"])
-@login_required(role="ADMIN")
-def comment_createform(report_id, naturesite_id):
-    r = Report.query.get(report_id)
-    n = NatureSite.query.get(naturesite_id)
-    return render_template("comment/newcomment.html", form = NewCommentForm(), report = r, naturesite=n)
-
-@app.route("/comment/<report_id>/<naturesite_id>/newcomment/", methods=["POST", "GET"])
+@app.route("/comment/<report_id>/<naturesite_id>/newcomment/", methods=["POST"])
 @login_required(role="ADMIN")
 def comment_create(report_id, naturesite_id,):
     r = Report.query.get(report_id)
@@ -36,7 +29,7 @@ def comment_create(report_id, naturesite_id,):
     form = NewCommentForm(request.form)
 
     if not form.validate():
-        return render_template("comment/newcomment.html", form = form, report = r, naturesite=n)
+        return render_template("comment/index.html", form2=CommentEditForm(), form = form, report = r, naturesite=n)
 
     c = Comment(form.text.data)
 
@@ -44,7 +37,6 @@ def comment_create(report_id, naturesite_id,):
     c.report_id = report_id
 
     db.session().add(c)
-
     db.session().commit()
   
     return redirect(url_for("show_comments", report_id = report_id, naturesite_id=naturesite_id)) 
@@ -55,11 +47,15 @@ def comment_create(report_id, naturesite_id,):
 def comment_change_description(report_id, naturesite_id, comment_id):
 
     c = Comment.query.get(comment_id)
+    form2 = CommentEditForm(request.form)
 
     if c.account_id != current_user.id:
         return login_manager.unauthorized()
 
-    c.text = request.form.get("text")
+    if not form2.validate():
+        return render_template("comment/index.html", form2=form2, form = NewCommentForm, report = r, naturesite=n)    
+
+    c.text = request.form.get("newtext")
     db.session().commit()
   
     return redirect(url_for("show_comments", report_id = report_id, naturesite_id=naturesite_id)) 

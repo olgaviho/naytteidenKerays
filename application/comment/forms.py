@@ -9,7 +9,7 @@ class NewCommentForm(FlaskForm):
 
 class CommentEditForm(FlaskForm):
 
-    text = StringField("Edit text")
+    newtext = StringField("Edit text", [validators.Length(min=3)] )
 
     class Meta:
         csrf = False           

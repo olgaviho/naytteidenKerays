@@ -2,8 +2,8 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, validators
 
 class NewReportForm(FlaskForm):
-    title = StringField("Title", [validators.Length(min=2)])
-    description = StringField("Description")
+    title = StringField("Title", [validators.Length(min=3)])
+    description = StringField("Description", [validators.Length(min=3)])
 
     class Meta:
         csrf = False
@@ -11,7 +11,7 @@ class NewReportForm(FlaskForm):
 
 class ReportEditForm(FlaskForm):
 
-    description = StringField("Edit description")
+    description = StringField("Edit description", [validators.Length(min=3)])
 
     class Meta:
         csrf = False         

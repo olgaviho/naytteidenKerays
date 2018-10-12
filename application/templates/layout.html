@@ -21,12 +21,12 @@
           <a class="nav-link" href="{{ url_for('naturesites_index') }} ">List nature sites</a>
         </li>
         <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('report_index') }} ">All reports</a>
+        </li>
+        <li class="nav-item">
           {% if current_user.is_authenticated %}
           <a class="nav-link" href="{{ url_for('naturesites_form') }} ">Add a nature site</a>
           {% endif %}
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{{ url_for('report_index') }} ">All reports</a>
         </li>
       </ul>
       <div class="form-inline mt-2 mt-md-0">
