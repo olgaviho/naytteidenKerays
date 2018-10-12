@@ -2,13 +2,19 @@
 
 {% block body %}
 
-<td>
-    <form method="POST" action="{{ url_for('report_change_description', report_id = report_id, naturesite_id = naturesite_id) }}">
-
+<form method="POST" action="{{ url_for('report_change_description', report_id = report_id, naturesite_id = naturesite_id) }}">
+    <td>
         {{ form.description }}
-        <input type="submit" value="Change description" />
-    </form>
-</td>
+    </td>
+    <td>
+        <ul>
+            {% for error in form.description.errors %}
+            <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
+    </td>
+    <td><input type="submit" value="Change description" /> </td>
+</form>
 <td>
     <form method="POST" action="{{ url_for('delete_report', report_id = report_id, naturesite_id = naturesite_id) }}">
         <input type="submit" value="Delete" />

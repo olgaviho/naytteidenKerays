@@ -16,7 +16,6 @@
     Comments
 </p>
 
-
 <table>
     <tr>
         <th>Author</th>
@@ -33,50 +32,50 @@
             {{ comment.text }}
         </td>
         <td>
-            <form method="POST" action="{{ url_for('comment_change_description', report_id = report.id, naturesite_id = naturesite.id, comment_id = comment.id) }}">                   
-            {{ form2.newtext }}
-            <input type="submit" value="Change text" />
+            <form method="POST" action="{{ url_for('comment_change_description', report_id = report.id, naturesite_id = naturesite.id, comment_id = comment.id) }}">
+                {{ form2.newtext }}
+                <input type="submit" value="Change text" />
             </form>
         </td>
         <td>
-                <ul>
-                    {% for error in form2.newtext.errors %}
-                    <li>{{ error }}</li>
-                    {% endfor %}
-                </ul>
-            </td>
+            <ul>
+                {% for error in form2.newtext.errors %}
+                <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        </td>
         <td>
             <form method="POST" action="{{ url_for('delete_comment', report_id = report.id, naturesite_id = naturesite.id, comment_id = comment.id) }}">
-                    <input type="submit" value="Delete" />
+                <input type="submit" value="Delete" />
             </form>
         </td>
         {% endfor %}
 </table>
 
 <form method="POST" action="{{url_for('comment_create', report_id = report.id, naturesite_id=naturesite.id) }}">
-        <table>
-            <tr>
-                <td>
-                    {{ form.text.label }}
-                </td>
-                <td>
-                    {{ form.text }}
-                </td>
-                <td>
-                    <ul>
-                        {% for error in form.text.errors %}
-                        <li>{{ error }}</li>
-                        {% endfor %}
-                    </ul>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="3">
-                    <input type="submit" value="Add a new comment" />
-                </td>
-            </tr>
-        </table>
-    </form>
+    <table>
+        <tr>
+            <td>
+                {{ form.text.label }}
+            </td>
+            <td>
+                {{ form.text }}
+            </td>
+            <td>
+                <ul>
+                    {% for error in form.text.errors %}
+                    <li>{{ error }}</li>
+                    {% endfor %}
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <input type="submit" value="Add a new comment" />
+            </td>
+        </tr>
+    </table>
+</form>
 
 
 {% endblock %}

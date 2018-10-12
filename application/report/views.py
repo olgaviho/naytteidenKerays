@@ -9,20 +9,23 @@ from application.report.forms import NewReportForm
 from application.auth.models import User
 from application.report.forms import ReportEditForm
 
-@app.route("/naturesites/edit/<naturesite_id>/report/new/", methods=["GET"])
+@app.route("/naturesites/edit/<naturesite_id>/report/", methods=["GET"])
 @login_required(role="ADMIN")
 def report_createform(naturesite_id):
-    t = NatureSite.query.get(naturesite_id)
-    return render_template("report/newreport.html", form = NewReportForm(), naturesite=t)
+    n = NatureSite.query.get(naturesite_id)
+    return render_template("report/newreport.html", form = NewReportForm(), naturesite=n)
 
 
-@app.route("/naturesites/edit/<naturesite_id>/", methods=["POST", "GET"])
+@app.route("/naturesites/edit/<naturesite_id>/report/create/", methods=["POST"])
 @login_required(role="ADMIN")
 def report_create(naturesite_id):
+   
     form = NewReportForm(request.form)
+    n = NatureSite.query.get(naturesite_id)
+
 
     if not form.validate():
-        return render_template("report/newreport.html", form = form)
+        return render_template("report/newreport.html", form = form, naturesite = n)
 
     r = Report(form.title.data, form.description.data)
     r.account_id = current_user.id
@@ -55,11 +58,18 @@ def report_edit(report_id, naturesite_id):
 def report_change_description(report_id, naturesite_id):
 
     r = Report.query.get(report_id)
+    n = NatureSite.query.get(naturesite_id)
 
     if r.account_id != current_user.id:
         return login_manager.unauthorized()
 
-    r.description = request.form.get("description")
+    form = ReportEditForm(request.form)
+
+    # joku menee pahasti tässä pieleen?
+    if not form.validate():
+        return render_template("report/edit.html", form = form, naturesite = n)  
+
+    r.description = form.description.data
     db.session().commit()
   
     return redirect(url_for("naturesite_edit", naturesite_id=naturesite_id))

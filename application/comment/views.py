@@ -27,7 +27,7 @@ def comment_create(report_id, naturesite_id,):
     n = NatureSite.query.get(naturesite_id)
 
     form = NewCommentForm(request.form)
-
+    
     if not form.validate():
         return render_template("comment/index.html", form2=CommentEditForm(), form = form, report = r, naturesite=n)
 
@@ -47,11 +47,14 @@ def comment_create(report_id, naturesite_id,):
 def comment_change_description(report_id, naturesite_id, comment_id):
 
     c = Comment.query.get(comment_id)
+
     form2 = CommentEditForm(request.form)
+    r = Report.query.get(report_id)
+    n = NatureSite.query.get(naturesite_id)
 
     if c.account_id != current_user.id:
         return login_manager.unauthorized()
-
+ # tässä jotain tapahtuu nyt...
     if not form2.validate():
         return render_template("comment/index.html", form2=form2, form = NewCommentForm, report = r, naturesite=n)    
 

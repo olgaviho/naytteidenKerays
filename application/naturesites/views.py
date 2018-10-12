@@ -26,7 +26,12 @@ def naturesite_change_description(naturesite_id):
     if t.account_id != current_user.id:
         return login_manager.unauthorized()
 
-    t.description = request.form.get("description")
+    form = NatureSiteEditForm(request.form)
+
+    if not form.validate():
+        return render_template("naturesites/edit.html", form = form, naturesite = t)
+
+    t.description = form.description.data
     db.session().commit()
   
     return redirect(url_for("naturesites_index"))    
@@ -34,8 +39,10 @@ def naturesite_change_description(naturesite_id):
 @app.route("/naturesites/", methods=["POST"])
 @login_required(role="ADMIN")
 def naturesites_create():
+
     form = NatureSiteForm(request.form)
 
+    # tässä validointi toimii oikein
     if not form.validate():
         return render_template("naturesites/new.html", form = form)
 
