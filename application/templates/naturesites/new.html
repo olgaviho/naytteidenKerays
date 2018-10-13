@@ -1,36 +1,22 @@
 {% extends "layout.html" %}
 
 {% block body %}
-<form method="POST" action="{{url_for('naturesites_create') }}">
-  <table>
-    <tr>
-      <td>
-        {{ form.name.label }}
-      </td>
-      <td>
-        {{ form.name }}
-      </td>
-      <td>
-        <ul>
-          {% for error in form.name.errors %}
-          <li>{{ error }}</li>
-          {% endfor %}
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        {{ form.description.label }}
-      </td>
-      <td>
-        {{ form.description }}
-      </td>
-    </tr>
-    <tr>
-      <td colspan="3">
-        <input type="submit" value="Add a new nature site" />
-      </td>
-    </tr>
-  </table>
+{{error}}
+
+<form method="POST" action="{{url_for('naturesites_create') }}" novalidate>
+  <div class="form-row">
+  <div class="col-md-6 mb-3">
+    <label for="name">Name</label>
+      <input class="form-control" id="name" name="name" required type="text" value="">
+  </div>
+    
+    
+  <div class="col-md-6 mb-3">
+    <label for="description">Description</label>
+      <input class="form-control" id="description" name="description" required type="text" value="">
+  </div>
+</div>
+  <input class="btn btn-primary" id="submit" name="submit" type="submit" value="Add a new nature site">
+
 </form>
 {% endblock %}
