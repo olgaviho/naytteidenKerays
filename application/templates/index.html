@@ -1,27 +1,26 @@
 {% extends "layout.html" %}
 
 {% block body %}
-<p>
-  Nature sites and reports
-</p>
+<p class="h1">Nature sites and reports</p>
 
 {% if users_and_reports is defined %}
-<p>
-  The current situation:
-</p>
+<p class="h4">The current situation</p>
 
-<table>
+<table class="table">
+  <thead>
   <tr>
-    <th>User</th>
-    <th>Number of created reports</th>
-    <th></th>
+    <th scope="col">User</th>
+    <th scope="col">Number of created reports</th>
   </tr>
+  </thead>
+  <tbody>
   {% for user in users_and_reports %}
   <tr>
     <td> {{user.name}}</td>
     <td> {{user.amount}}</td>
   </tr>
   {% endfor %}
+ </tbody>
 </table>
 
 {% endif %}
