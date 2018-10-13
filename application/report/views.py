@@ -13,6 +13,9 @@ from application.report.forms import ReportEditForm
 @login_required(role="ADMIN")
 def report_createform(naturesite_id):
     n = NatureSite.query.get(naturesite_id)
+    
+    if not n:
+        return render_template("error.html",  message = "ERROR! Can't find Nature site")
     return render_template("report/newreport.html", form = NewReportForm(), naturesite=n)
 
 
@@ -22,7 +25,9 @@ def report_create(naturesite_id):
    
     form = NewReportForm(request.form)
     n = NatureSite.query.get(naturesite_id)
-
+    
+    if not n:
+        return render_template("error.html",  message = "ERROR! Can't find Nature site")
 
     if not form.validate():
         return render_template("report/newreport.html", form = form, naturesite = n)
@@ -46,6 +51,14 @@ def report_index():
 def report_edit(report_id, naturesite_id):
 
     r = Report.query.get(report_id)
+    
+    if not r:
+        return render_template("error.html",  message = "ERROR! Can't find Nature site")
+    
+    n = NatureSite.query.get(naturesite_id)
+    
+    if not n:
+        return render_template("error.html",  message = "ERROR! Can't find Nature site")
 
     if r.account_id != current_user.id:
         return login_manager.unauthorized()
@@ -58,7 +71,11 @@ def report_edit(report_id, naturesite_id):
 def report_change_description(report_id, naturesite_id):
 
     r = Report.query.get(report_id)
+    if not r:
+        return render_template("error.html",  message = "ERROR! Can't find Nature site")
     n = NatureSite.query.get(naturesite_id)
+    if not n:
+        return render_template("error.html",  message = "ERROR! Can't find Nature site")
 
     if r.account_id != current_user.id:
         return login_manager.unauthorized()
@@ -80,6 +97,12 @@ def report_change_description(report_id, naturesite_id):
 def delete_report(report_id, naturesite_id):
 
     r = Report.query.get(report_id)
+    if not r:
+        return render_template("error.html",  message = "ERROR! Can't find Nature site")
+    
+    n = NatureSite.query.get(naturesite_id)
+    if not n:
+        return render_template("error.html",  message = "ERROR! Can't find Nature site")
 
     if r.account_id != current_user.id:
         return login_manager.unauthorized()
