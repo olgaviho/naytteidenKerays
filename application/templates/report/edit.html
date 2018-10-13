@@ -20,8 +20,10 @@
   <input class="btn btn-primary" id="submit" name="submit" type="submit" value="Change description">
 </form>
 
+<p class="h4">Delete report</p>
+
  <form method="POST" action="{{ url_for('delete_report', report_id = report_id, naturesite_id = naturesite_id) }}" novalidate>
-     <input class="btn btn-primary" id="submit" name="submit" type="submit" value="Delete report">
+     <input class="btn btn-primary" id="submit" name="submit" type="submit" value="Delete">
     </form>
 
 {% endblock %}
