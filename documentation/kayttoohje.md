@@ -4,7 +4,7 @@
 Lataa git-repositorio zippinä tietokoneellesi klikkaamalla etusivulla painiketta _clone or download_. Pura paketti sopivaan kohtaan koneellesi. 
 
 ## Ohjelman käynnistäminen <h4>
-Ohjelma käynnistetään komennolla:
+(Ennen käynnistystä pitää aktivoida venvin virtuaaliympäristö?) Ohjelma käynnistetään komennolla:
 ```
 python3 run.py
 
