@@ -22,6 +22,9 @@ def naturesites_form():
 def naturesite_change_description(naturesite_id):
 
     t = NatureSite.query.get(naturesite_id)
+    
+    if not t:
+        return render_template("error.html",  message = "ERROR! Can't find Nature site")
 
     if t.account_id != current_user.id:
         return login_manager.unauthorized()
