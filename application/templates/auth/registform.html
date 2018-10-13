@@ -1,74 +1,54 @@
 {% extends "layout.html" %}
 
 {% block body %}
-{{ error }}
-<form method="POST" action="{{url_for('auth_create') }}">
-  <table>
-    <tr>
-      <td>
-        {{ form2.name.label }}
-      </td>
-      <td>
-        {{ form2.name }}
-      </td>
-      <td>
-        <ul>
-          {% for error in form2.name.errors %}
-          <li>{{ error }}</li>
-          {% endfor %}
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        {{ form2.username.label }}
-      </td>
-      <td>
-        {{ form2.username }}
-      </td>
-      <td>
-        <ul>
-          {% for error in form2.username.errors %}
-          <li>{{ error }}</li>
-          {% endfor %}
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        {{ form2.password.label }}
-      </td>
-      <td>
-        {{ form2.password}}
-      </td>
-      <td>
-        <ul>
-          {% for error in form2.password.errors %}
-          <li>{{ error }}</li>
-          {% endfor %}
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        {{ form2.password2.label }}
-      </td>
-      <td>
-        {{ form2.password2}}
-      </td>
-      <td>
-        <ul>
-          {% for error in form2.password2.errors %}
-          <li>{{ error }}</li>
-          {% endfor %}
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td colspan="4">
-        <input type="submit" value="Add a new user" />
-      </td>
-    </tr>
-  </table>
+
+<form method="POST" action="{{url_for('auth_create') }}" novalidate>
+
+   <div class="form-row">
+  <div class="col-md-6 mb-3">
+    <label for="name">Name</label>
+      <input class="form-control" id="name" name="name" required type="text" value="">
+  </div>
+  </div>
+  
+    {% for error in form2.name.errors %}
+    <li>{{ error }}</li>
+     {% endfor %}
+  
+  <div class="form-row">
+  <div class="col-md-6 mb-3">
+    <label for="username">Userame</label>
+      <input class="form-control" id="username" name="username" required type="text" value="">
+  </div>
+  </div>
+  
+    {% for error in form2.username.errors %}
+    <li>{{ error }}</li>
+     {% endfor %}
+  
+  <div class="form-row">
+  <div class="col-md-6 mb-3">
+    <label for="password">Password</label>
+      <input class="form-control" id="password" name="password" required type="password" value="">
+  </div>
+  </div>
+  
+    {% for error in form2.password.errors %}
+    <li>{{ error }}</li>
+     {% endfor %}
+  
+  <div class="form-row">
+  <div class="col-md-6 mb-3">
+    <label for="password2">Write password again</label>
+      <input class="form-control" id="password2" name="password2" required type="password" value="">
+  </div>
+  </div>
+  
+    {% for error in form2.password2.errors %}
+    <li>{{ error }}</li>
+     {% endfor %}
+
+  <input class="btn btn-primary" id="submit" name="submit" type="submit" value="Add a new user">
 </form>
+
 {% endblock %}
