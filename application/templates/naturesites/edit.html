@@ -42,23 +42,17 @@
         <th>Author</th>
         <th>Description</th>
         <th></th>
-        <th></th>
     </tr>
     {% for report in naturesite.reports %}
     <tr>
         <td>
-            {{ report.title }}
+            <a href="{{ url_for('report_edit', report_id = report.id, naturesite_id = naturesite.id) }}">{{ report. title }}</a>
         </td>
         <td>
             {{ report.account.username }}
         </td>
         <td>
             {{ report.description }}
-        </td>
-        <td>
-            <form method="GET" action="{{ url_for('report_edit', report_id = report.id, naturesite_id = naturesite.id) }}">
-                <input type="submit" value="Edit" />
-            </form>
         </td>
         <td>
             <a href="{{ url_for('show_comments', report_id = report.id, naturesite_id = naturesite.id) }}">Comments</a>
