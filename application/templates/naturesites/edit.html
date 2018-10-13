@@ -13,14 +13,14 @@
       <input class="form-control" id="description" name="description" required type="text" value="">
   </div>
   </div>
-  <input class="btn btn-primary" id="submit" name="submit" type="submit" value="Change description">
-</form>
-               
-               
- {% for error in form.description.errors %}
+  
+  {% for error in form.description.errors %}
  <li>{{ error }}</li>
   {% endfor %}
 
+  <input class="btn btn-primary" id="submit" name="submit" type="submit" value="Change description">
+</form>
+              
 <p></p>
  <p class="h5">Reports</p>
 
