@@ -33,12 +33,9 @@ CREATE TABLE comments (
 
 ## Tietokannan indeksit <h4>
   
-Indeksit nopeuttavat tiedonhakua taulusta. Pääavaimille indeksit on luotu automaattisesti, mutta niille viite-avaimille, joita käytetään sovelluksen sql-kyselyissä on luotu myös indeksit Herokun tietokantaan. Nämä viiteavaimet ovat: Report.account_id ja Naturesite.account_id. Indeksit on luotu seuraavalla tavalla:
+Indeksit nopeuttavat tiedonhakua taulusta. Pääavaimille indeksit on luotu automaattisesti, mutta sille viite-avaimelle, jota käytetään sovelluksen sql-kyselyissä, on luotu myös indeksi Herokun tietokantaan. Indeksi on luotu seuraavalla tavalla:
 ```
 CREATE INDEX idx_account_id_report ON report (account_id);
-```
-```
-CREATE INDEX idx_account_id_report ON naturesite (account_id);
 ```
 
   
