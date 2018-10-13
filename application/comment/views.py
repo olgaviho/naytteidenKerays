@@ -16,7 +16,11 @@ from application.comment.models import Comment
 def show_comments(report_id, naturesite_id):
 
     r = Report.query.get(report_id)
+    if not r:
+        return render_template("error.html",  message = "ERROR! Can't find report")
     n = NatureSite.query.get(naturesite_id)
+    if not n:
+        return render_template("error.html",  message = "ERROR! Can't find Nature site")
 
     return render_template("comment/index.html", form2=CommentEditForm(),form=NewCommentForm(), report = r, naturesite = n) 
 
@@ -24,7 +28,11 @@ def show_comments(report_id, naturesite_id):
 @login_required(role="ADMIN")
 def comment_create(report_id, naturesite_id,):
     r = Report.query.get(report_id)
+    if not r:
+        return render_template("error.html",  message = "ERROR! Can't find report")
     n = NatureSite.query.get(naturesite_id)
+    if not n:
+        return render_template("error.html",  message = "ERROR! Can't find Nature site")
 
     form = NewCommentForm(request.form)
     
@@ -47,10 +55,17 @@ def comment_create(report_id, naturesite_id,):
 def comment_change_description(report_id, naturesite_id, comment_id):
 
     c = Comment.query.get(comment_id)
+    if not c:
+        return render_template("error.html",  message = "ERROR! Can't find comment")
 
     form2 = CommentEditForm(request.form)
+
     r = Report.query.get(report_id)
+    if not r:
+        return render_template("error.html",  message = "ERROR! Can't find Report")
     n = NatureSite.query.get(naturesite_id)
+    if not n:
+        return render_template("error.html",  message = "ERROR! Can't find Nature site")
 
     if c.account_id != current_user.id:
         return login_manager.unauthorized()
@@ -70,6 +85,14 @@ def comment_change_description(report_id, naturesite_id, comment_id):
 def delete_comment( report_id, naturesite_id, comment_id):
 
     c = Comment.query.get(comment_id)
+    if not c:
+        return render_template("error.html",  message = "ERROR! Can't find the Comment")
+    r = Report.query.get(report_id)
+    if not r:
+        return render_template("error.html",  message = "ERROR! Can't find the Report")
+    n = NatureSite.query.get(naturesite_id)
+    if not n:
+        return render_template("error.html",  message = "ERROR! Can't find the Nature site")
 
     if c.account_id != current_user.id:
         return login_manager.unauthorized()
