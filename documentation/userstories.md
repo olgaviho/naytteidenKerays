@@ -12,13 +12,17 @@ Tässä tapaukset, jotka kuuluvat sovellukselle:
 Kirjautumattomat käyttäjät näkevät kahden sql-kyselyn tulokset. Ensimmäinen kertoo, kuinka monta raporttia kukin käyttäjä on luonut järjestelmään.
 
 ```
-Select * from jostain
+"SELECT Account.name, COUNT(Report.id) FROM Account"
+                    " LEFT JOIN Report ON Report.account_id = Account.id"
+                    " GROUP BY Account.id") 
 ```
 
 Toinen kysely kertoo, millaisia raportteja järjestelmään on luotu. Raporteista tulee ilmi niiden otsikko, itse kuvaus, luontokohde ja kirjoittaja. 
 
 ```
-Select * from jostain
+SELECT Report.title, Account.name, Report.description, Nature_site.name FROM Report"
+                    " LEFT JOIN Account ON Report.account_id = Account.id"
+                    " LEFT JOIN Nature_site ON Report.naturesite_id = Nature_site.id") 
 ```
 
 
@@ -30,7 +34,6 @@ Select * from jostain
 - Kirjautunut käyttäjä voi muokata lisäämäänsä raporttia.
 - Kirjautunut käyttäjä voi poistaa luomansa raportin.
 - Kirjautunut käyttäjä voi kirjautua ulos sovelluksesta.
-
 - Kirjautunut käyttäjä voi kirjoittaa kommentin raporttiin.
 - Kirjautunut käyttäjä voi muokata kommenttiaan.
 - Kirjautunut käyttäjä voi poistaa kommenttinsa.
