@@ -2,8 +2,9 @@
 
 {% block body %}
 <form method="POST" action="{{ url_for('naturesite_change_description', naturesite_id=naturesite.id) }}">
-        <h4>{{naturesite.name}}</h4>
-        <h3>{{naturesite.description}}</h3>
+
+   <p class="h3">{{naturesite.name}}</p>
+   <p class="h4">{{naturesite.description}}</p>
     <table>
         <tr>
             <td>
@@ -29,9 +30,7 @@
         </tr>
     </table>
 </form>
-<p>
-    Reports
-</p>
+ <p class="h5">Reports</p>
 <table>
     <tr>
         <th>Title</th>
