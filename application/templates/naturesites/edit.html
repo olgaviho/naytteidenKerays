@@ -1,35 +1,26 @@
 {% extends "layout.html" %}
 
 {% block body %}
-<form method="POST" action="{{ url_for('naturesite_change_description', naturesite_id=naturesite.id) }}">
 
-   <p class="h3">{{naturesite.name}}</p>
-   <p class="h4">{{naturesite.description}}</p>
-    <table>
-        <tr>
-            <td>
-                {{ form.description.label }}
-            </td>
-            <td>
-                {{ form.description }}
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <ul>
-                    {% for error in form.description.errors %}
-                    <li>{{ error }}</li>
-                    {% endfor %}
-                </ul>
-            </td>
-        </tr>
-        <tr>
-            <td colspan="3">
-                <input type="submit" value="Change description" />
-            </td>
-        </tr>
-    </table>
+
+<p class="h3">{{naturesite.name}}</p>
+<p class="h4">{{naturesite.description}}</p>
+ 
+ <form method="POST" action="{{ url_for('naturesite_change_description', naturesite_id=naturesite.id) }}" novalidate>
+  <div class="form-row">
+  <div class="col-md-6 mb-3">
+    <label for="username">description</label>
+      <input class="form-control" id="description" name="description" required type="text" value="">
+  </div>
+   </div>
+  <input class="btn btn-primary" id="submit" name="submit" type="submit" value="Change description">
 </form>
+               
+               
+ {% for error in form.description.errors %}
+ <li>{{ error }}</li>
+  {% endfor %}
+
 <p></p>
  <p class="h5">Reports</p>
 
