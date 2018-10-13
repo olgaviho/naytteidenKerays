@@ -17,6 +17,10 @@
   <input class="btn btn-primary" id="submit" name="submit" type="submit" value="Add a new nature site">
 </form>
 
+{% for error in form.name.errors %}
+ <li>{{ error }}</li>
+ {% endfor %}
+
 {% for error in form.description.errors %}
  <li>{{ error }}</li>
  {% endfor %}
