@@ -59,6 +59,6 @@ def naturesite_edit(naturesite_id):
 
     t = NatureSite.query.get(naturesite_id)
     if not t:
-        return "Moi"
+        return render_template("error.html",  message = "ERROR! Can't find Nature site")
 
     return render_template("naturesites/edit.html",  form = NatureSiteEditForm(), naturesite=t)
