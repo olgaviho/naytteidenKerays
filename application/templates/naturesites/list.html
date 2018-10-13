@@ -1,11 +1,14 @@
 {% extends "layout.html" %}
 
 {% block body %}
-<table>
+<table class="table">
+  <thead>
   <tr>
-    <th>Nature site</th>
-    <th>Description</th>
+    <th scope="col">Nature site</th>
+    <th scope="col">Description</th>
   </tr>
+  </thread>
+  <tbody>
   {% for naturesite in naturesites %}
   <tr>
     <td>
@@ -18,5 +21,6 @@
     <td>{{ naturesite.description }}</td>
   </tr>
   {% endfor %}
+ </tbody>
 </table>
 {% endblock %}
