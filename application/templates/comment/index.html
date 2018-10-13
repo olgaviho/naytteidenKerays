@@ -2,80 +2,70 @@
 
 {% block body %}
 
-<p>
-    Nature site: {{ naturesite.name }}
-</p>
-<p>
-    Report: {{ report.title }}
-</p>
-<p>
-    {{ report.description }}
-</p>
+<p class="h3">Report: {{ report.title }}</p>
+<p class="h5">{{ report.description }}</p>
+<p class="h4">Comments</p>
 
-<p>
-    Comments
-</p>
 
-<table>
-    <tr>
-        <th>Author</th>
-        <th>Text</th>
-        <th>Edit</th>
-        <th>Delete</th>
-    </tr>
-    {% for comment in report.comments %}
-    <tr>
-        <td>
-            {{ comment.account.username }}
-        </td>
-        <td>
-            {{ comment.text }}
-        </td>
-        <td>
-            <form method="POST" action="{{ url_for('comment_change_description', report_id = report.id, naturesite_id = naturesite.id, comment_id = comment.id) }}">
-                {{ form2.newtext }}
-                <input type="submit" value="Change text" />
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">Author</th>
+    <th scope="col">Text</th>
+      <th scope="col">Edit</th>
+      <th scope="col"></th>
+      <th scope="col">Delete</th>
+  </tr>
+  </thread>
+  <tbody>
+  {% for comment in report.comments %}
+  <tr>
+    <td>
+         {{ comment.account.username }}
+    </td>
+    <td>
+        {{ comment.text }}
+      <td>
+            <form method="POST" action="{{ url_for('comment_change_description', report_id = report.id, naturesite_id = naturesite.id, comment_id = comment.id) }}" novalidate>
+                 <div class="form-row">
+                  <div class="col-md-6 mb-3">
+                <label for="text">text</label>
+                <input class="form-control" id="text" name="text" required type="text" value="">
+                    </div>
+                </div>     
+                <input class="btn btn-primary" id="submit" name="submit" type="submit" value="Change text">
             </form>
         </td>
-        <td>
+      <td>
             <ul>
                 {% for error in form2.newtext.errors %}
                 <li>{{ error }}</li>
                 {% endfor %}
             </ul>
-        </td>
         <td>
-            <form method="POST" action="{{ url_for('delete_comment', report_id = report.id, naturesite_id = naturesite.id, comment_id = comment.id) }}">
-                <input type="submit" value="Delete" />
+            <form method="POST" action="{{ url_for('delete_comment', report_id = report.id, naturesite_id = naturesite.id, comment_id = comment.id) }}" novalidate>
+                <input class="btn btn-primary" id="submit" name="submit" type="submit" value="Delete">
             </form>
         </td>
-        {% endfor %}
+  </tr>
+  {% endfor %}
+ </tbody>
 </table>
 
-<form method="POST" action="{{url_for('comment_create', report_id = report.id, naturesite_id=naturesite.id) }}">
-    <table>
-        <tr>
-            <td>
-                {{ form.text.label }}
-            </td>
-            <td>
-                {{ form.text }}
-            </td>
-            <td>
-                <ul>
-                    {% for error in form.text.errors %}
+
+
+<form method="POST" action="{{url_for('comment_create', report_id = report.id, naturesite_id=naturesite.id) }}" novalidate>
+                 <div class="form-row">
+                  <div class="col-md-6 mb-3">
+                <label for="text">text</label>
+                <input class="form-control" id="text" name="text" required type="text" value="">
+                    </div>
+                </div>    
+   
+                      {% for error in form.text.errors %}
                     <li>{{ error }}</li>
                     {% endfor %}
-                </ul>
-            </td>
-        </tr>
-        <tr>
-            <td colspan="3">
-                <input type="submit" value="Add a new comment" />
-            </td>
-        </tr>
-    </table>
-</form>
-
-
+   
+                <input class="btn btn-primary" id="submit" name="submit" type="submit" value="Add a new Comment">
+            </form>
 {% endblock %}
