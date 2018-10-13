@@ -1,7 +1,6 @@
 {% extends "layout.html" %}
 
 {% block body %}
-{{error}}
 
 <form method="POST" action="{{url_for('naturesites_create') }}" novalidate>
   <div class="form-row">
@@ -10,17 +9,16 @@
       <input class="form-control" id="name" name="name" required type="text" value="">
   </div>
     
-    
   <div class="col-md-6 mb-3">
     <label for="description">Description</label>
       <input class="form-control" id="description" name="description" required type="text" value="">
   </div>
 </div>
   <input class="btn btn-primary" id="submit" name="submit" type="submit" value="Add a new nature site">
-
-   {% for error in form.description.errors %}
- <li>{{ error }}</li>
-  {% endfor %}
-  
 </form>
+
+{% for error in form.description.errors %}
+ <li>{{ error }}</li>
+ {% endfor %}
+
 {% endblock %}
