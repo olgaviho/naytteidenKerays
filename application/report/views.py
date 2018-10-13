@@ -63,7 +63,7 @@ def report_edit(report_id, naturesite_id):
     if r.account_id != current_user.id:
         return login_manager.unauthorized()
     
-    return render_template("report/edit.html", form=ReportEditForm(), report_id = report_id, naturesite_id= naturesite_id )     
+    return render_template("report/edit.html", form=ReportEditForm(), report = r, naturesite_id= naturesite_id )     
 
 
 @app.route("/naturesites/edit/<report_id>/<naturesite_id>/description/", methods=["POST"])
