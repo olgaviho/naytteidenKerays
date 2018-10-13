@@ -2,9 +2,12 @@
 
 {% block body %}
 
+<p class="h3">Title: {{report.title}} </p>
+<p class="h4">{{report.description}}</p>
+
 <p class="h4">Edit description</p>
 
- <form method="POST" action="{{ url_for('report_change_description', report_id = report_id, naturesite_id = naturesite_id) }}" novalidate>
+ <form method="POST" action="{{ url_for('report_change_description', report_id = report.id, naturesite_id = naturesite_id) }}" novalidate>
 
  <div class="form-row"> 
   <div class="col-md-6 mb-3">
@@ -22,7 +25,7 @@
 <p></p>
 <p class="h4">Delete report</p>
 
- <form method="POST" action="{{ url_for('delete_report', report_id = report_id, naturesite_id = naturesite_id) }}" novalidate>
+ <form method="POST" action="{{ url_for('delete_report', report_id = report.id, naturesite_id = naturesite_id) }}" novalidate>
      <input class="btn btn-primary" id="submit" name="submit" type="submit" value="Delete">
     </form>
 
