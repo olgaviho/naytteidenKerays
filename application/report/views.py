@@ -84,7 +84,7 @@ def report_change_description(report_id, naturesite_id):
 
     # joku menee pahasti tässä pieleen?
     if not form.validate():
-        return render_template("report/edit.html", form = form, naturesite_id = n.id, report_id= r.id)  
+        return render_template("report/edit.html", form = form, naturesite_id = n.id, report= r)  
 
     r.description = form.description.data
     db.session().commit()
