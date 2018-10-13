@@ -17,8 +17,8 @@ Harjoitustyö mukailee seuraavaa [aihetta](http://advancedkittenry.github.io/suu
 
 [Käyttötapaukset](https://github.com/olgaviho/naytteidenKerays/blob/master/documentation/userstories.md)
 
-[Tietokantakaavio](https://github.com/olgaviho/naytteidenKerays/blob/master/documentation/tietokantakaavio.md)
+[Tietokantakaavio, indeksit ja normalisointi](https://github.com/olgaviho/naytteidenKerays/blob/master/documentation/tietokantakaavio.md)
 
-[käyttö- ja asennusohje](https://github.com/olgaviho/naytteidenKerays/blob/master/documentation/kayttoohje.md)
+[käyttö- ja asennusohje, omat kokemukset ja sovelluksen puutteet](https://github.com/olgaviho/naytteidenKerays/blob/master/documentation/kayttoohje.md)
 
 
