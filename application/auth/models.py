@@ -31,20 +31,7 @@ class User(Base):
 
     def is_authenticated(self):
         return True    
-
-
-    @staticmethod
-    def how_many_naturesites_users_have():
-        stmt = text("SELECT Account.id, Account.name, COUNT(Nature_site.id) FROM Account"
-                    " LEFT JOIN Nature_site ON Nature_site.account_id = Account.id"
-                    " GROUP BY Account.id") 
-    
-        res=db.engine.execute(stmt)
-    
-        response = []
-        for row in res:
-            response.append({"id":row[0], "name": row[1], "amount": row[2]})    
-        return response     
+  
 
     @staticmethod
     def how_many_reports_users_have_created():
