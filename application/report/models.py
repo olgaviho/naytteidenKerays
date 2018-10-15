@@ -21,7 +21,7 @@ class Report(Base):
 
     @staticmethod
     def allreports():
-        stmt = text("SELECT Report.title, Account.name, Report.description, Nature_site.name, COUNT(Comment.id) FROM Report"
+        stmt = text("SELECT Report.title, Account.name, Report.description, Nature_site.name FROM Report"
                     " LEFT JOIN Account ON Report.account_id = Account.id"
                     " LEFT JOIN Nature_site ON Report.naturesite_id = Nature_site.id") 
     
