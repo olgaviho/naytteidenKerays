@@ -29,5 +29,5 @@ class Report(Base):
     
         response = []
         for row in res:
-            response.append({"title": row[0], "author": row[1], "description": row[2], "naturesite": row[3], "number": row[4]})    
+            response.append({"title": row[0], "author": row[1], "description": row[2], "naturesite": row[3]})    
         return response     
