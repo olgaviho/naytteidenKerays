@@ -1,7 +1,7 @@
 from flask import render_template, request, redirect, url_for
-from flask_login import login_user, logout_user
+from flask_login import login_user, logout_user, login_required
 
-from application import app, db, login_required, login_manager
+from application import app, db, login_manager
 from application.auth.models import User
 from application.auth.forms import LoginForm
 from application.auth.forms import CreateAccountForm
@@ -28,28 +28,28 @@ def auth_logout():
 
 @app.route("/auth/createform/")
 def auth_form():
-    return render_template("auth/registform.html", form2 = CreateAccountForm())
+    return render_template("auth/registform.html", accountform = CreateAccountForm())
 
 @app.route("/auth/create/", methods=["POST"])
 def auth_create():
-    form2 = CreateAccountForm(request.form)
+    accountform = CreateAccountForm(request.form)
 
-    if not form2.validate():
-        return render_template("auth/registform.html", form2 = form2)
+    if not accountform.validate():
+        return render_template("auth/registform.html", accountform = accountform)
 
 
-    pass1 = form2.password.data
-    pass2 = form2.password2.data    
+    password = accountform.password.data
+    repeat_password = accountform.repeat_password.data    
 
-    if pass1 != pass2:
-        return render_template("auth/registform.html", form2 = form2,
+    if password != repeat_password:
+        return render_template("auth/registform.html", accountform = accountform,
                                 error = "Passwords don't match")
 
-    u = User(form2.name.data, form2.username.data, form2.password.data)
+    u = User(accountform.name.data, accountform.username.data, accountform.password.data)
 
-    sameuser = User.query.filter_by(username=form2.username.data).first()
+    sameuser = User.query.filter_by(username=accountform.username.data).first()
     if sameuser:
-        return render_template("auth/registform.html", form2 = form2,
+        return render_template("auth/registform.html", accountform = accountform,
                                 error = "Username must be unique")                            
 
     db.session().add(u)

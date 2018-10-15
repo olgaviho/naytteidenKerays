@@ -32,9 +32,6 @@ class User(Base):
     def is_authenticated(self):
         return True    
 
-    def roles(self):
-        return ["ADMIN"]
-
 
     @staticmethod
     def how_many_naturesites_users_have():

@@ -8,19 +8,19 @@
 
 <table class="table">
   <thead>
-  <tr>
-    <th scope="col">User</th>
-    <th scope="col">Number of created reports</th>
-  </tr>
+    <tr>
+      <th scope="col">User</th>
+      <th scope="col">Number of created reports</th>
+    </tr>
   </thead>
   <tbody>
-  {% for user in users_and_reports %}
-  <tr>
-    <td> {{user.name}}</td>
-    <td> {{user.amount}}</td>
-  </tr>
-  {% endfor %}
- </tbody>
+    {% for user in users_and_reports %}
+    <tr>
+      <td> {{user.name}}</td>
+      <td> {{user.amount}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
 </table>
 
 {% endif %}

@@ -4,21 +4,21 @@
 {{error}}
 
 
-    
+
 <form method="POST" action="{{ url_for('auth_login') }}" novalidate>
   <div class="form-row">
-  <div class="col-md-6 mb-3">
-    <label for="username">username</label>
+    <div class="col-md-6 mb-3">
+      <label for="username">username</label>
       <input class="form-control" id="username" name="username" required type="text" value="">
-  </div>
-    
-    
-  <div class="col-md-6 mb-3">
-    <label for="password">password</label>
-    
+    </div>
+
+
+    <div class="col-md-6 mb-3">
+      <label for="password">password</label>
+
       <input class="form-control" id="password" name="password" required type="password" value="">
+    </div>
   </div>
-</div>
   <input class="btn btn-primary" id="submit" name="submit" type="submit" value="Login">
 
 </form>

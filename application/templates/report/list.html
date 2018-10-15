@@ -6,23 +6,25 @@
 
 <table class="table">
   <thead>
-  <tr>
-    <th scope="col">Title</th>
-    <th scope="col">Author</th>
-    <th scope="col">Description</th>
-    <th scope="col">Nature site</th>
-  </tr>
-  <thead>  
-  <tbody>  
-  {% for report in reports %}
-  <tr>
-    <td> {{report.title}}</td>
-    <td> {{report.author}}</td>
-    <td> {{report.description}}</td>
-    <td> {{report.naturesite}}</td>
-  </tr>
-  {% endfor %}
-  </tbody>   
+    <tr>
+      <th scope="col">Title</th>
+      <th scope="col">Author</th>
+      <th scope="col">Description</th>
+      <th scope="col">Nature site</th>
+      <th scope="col">Number of comments</th>
+    </tr>
+    <thead>
+    <tbody>
+      {% for report in reports %}
+      <tr>
+        <td> {{report.title}}</td>
+        <td> {{report.author}}</td>
+        <td> {{report.description}}</td>
+        <td> {{report.naturesite}}</td>
+        <td> {{report.number}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
 </table>
 
 {% endif %}

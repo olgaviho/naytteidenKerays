@@ -21,13 +21,15 @@ class Report(Base):
 
     @staticmethod
     def allreports():
-        stmt = text("SELECT Report.title, Account.name, Report.description, Nature_site.name FROM Report"
+        stmt = text("SELECT Report.title, Account.name, Report.description, Nature_site.name, COUNT(Comment.id) FROM Report"
                     " LEFT JOIN Account ON Report.account_id = Account.id"
-                    " LEFT JOIN Nature_site ON Report.naturesite_id = Nature_site.id") 
+                    " LEFT JOIN Nature_site ON Report.naturesite_id = Nature_site.id"
+                    " LEFT JOIN Comment ON Comment.report_id = report.id"
+                    " GROUP BY report.id") 
     
         res=db.engine.execute(stmt)
     
         response = []
         for row in res:
-            response.append({"title": row[0], "author": row[1], "description": row[2], "naturesite": row[3]})    
+            response.append({"title": row[0], "author": row[1], "description": row[2], "naturesite": row[3], "number": row[4]})    
         return response     

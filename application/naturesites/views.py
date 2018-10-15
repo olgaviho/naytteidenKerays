@@ -1,7 +1,7 @@
-from application import app, db, login_required, login_manager
+from application import app, db, login_manager
 
 from flask import redirect, render_template, request, url_for
-from flask_login import current_user
+from flask_login import current_user, login_required
 
 from application.naturesites.models import NatureSite
 from application.naturesites.forms import NatureSiteForm
@@ -13,18 +13,18 @@ def naturesites_index():
     return render_template("naturesites/list.html", naturesites = NatureSite.query.all())
 
 @app.route("/naturesites/new/")
-@login_required(role="ADMIN")
+@login_required
 def naturesites_form():
     return render_template("naturesites/new.html", form = NatureSiteForm())
 
 @app.route("/naturesites/<naturesite_id>/", methods=["POST"])
-@login_required(role="ADMIN")
+@login_required
 def naturesite_change_description(naturesite_id):
 
     t = NatureSite.query.get(naturesite_id)
     
     if not t:
-        return render_template("error.html",  message = "ERROR! Can't find Nature site")
+        return render_template("error.html",  message = "ERROR! Can't find the Nature site")
 
     if t.account_id != current_user.id:
         return login_manager.unauthorized()
@@ -40,15 +40,23 @@ def naturesite_change_description(naturesite_id):
     return redirect(url_for("naturesites_index"))    
 
 @app.route("/naturesites/", methods=["POST"])
-@login_required(role="ADMIN")
+@login_required
 def naturesites_create():
 
     form = NatureSiteForm(request.form)
+
 
     if not form.validate():
         return render_template("naturesites/new.html", form = form)
 
     n = NatureSite(form.name.data, form.description.data)
+
+    samenaturesite = NatureSite.query.filter_by(name=form.name.data).first()
+
+    if samenaturesite:
+        return render_template("naturesites/new.html", form = form, error = "Name must be unique") 
+
+
     n.account_id = current_user.id
 
     db.session().add(n)
@@ -57,11 +65,14 @@ def naturesites_create():
     return redirect(url_for("naturesites_index"))
 
 @app.route("/naturesites/edit/<naturesite_id>", methods=["GET"])
-@login_required(role="ANY")
+@login_required
 def naturesite_edit(naturesite_id):
 
     t = NatureSite.query.get(naturesite_id)
+
+
     if not t:
-        return render_template("error.html",  message = "ERROR! Can't find Nature site")
+        return render_template("error.html",  message = "ERROR! Can't find the Nature site")
 
     return render_template("naturesites/edit.html",  form = NatureSiteEditForm(), naturesite=t)
+

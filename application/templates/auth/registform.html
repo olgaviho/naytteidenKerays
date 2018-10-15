@@ -4,49 +4,49 @@
 {{ error }}
 <form method="POST" action="{{url_for('auth_create') }}" novalidate>
 
-   <div class="form-row">
-  <div class="col-md-6 mb-3">
-    <label for="name">Name</label>
+  <div class="form-row">
+    <div class="col-md-6 mb-3">
+      <label for="name">Name</label>
       <input class="form-control" id="name" name="name" required type="text" value="">
+    </div>
   </div>
-  </div>
-  
-    {% for error in form2.name.errors %}
-    <li>{{ error }}</li>
-     {% endfor %}
-  
+
+  {% for error in accountform.name.errors %}
+  <li>{{ error }}</li>
+  {% endfor %}
+
   <div class="form-row">
-  <div class="col-md-6 mb-3">
-    <label for="username">Userame</label>
+    <div class="col-md-6 mb-3">
+      <label for="username">Userame</label>
       <input class="form-control" id="username" name="username" required type="text" value="">
+    </div>
   </div>
-  </div>
-  
-    {% for error in form2.username.errors %}
-    <li>{{ error }}</li>
-     {% endfor %}
-  
+
+  {% for error in accountform.username.errors %}
+  <li>{{ error }}</li>
+  {% endfor %}
+
   <div class="form-row">
-  <div class="col-md-6 mb-3">
-    <label for="password">Password</label>
+    <div class="col-md-6 mb-3">
+      <label for="password">Password</label>
       <input class="form-control" id="password" name="password" required type="password" value="">
+    </div>
   </div>
-  </div>
-  
-    {% for error in form2.password.errors %}
-    <li>{{ error }}</li>
-     {% endfor %}
-  
+
+  {% for error in accountform.password.errors %}
+  <li>{{ error }}</li>
+  {% endfor %}
+
   <div class="form-row">
-  <div class="col-md-6 mb-3">
-    <label for="password2">Write password again</label>
-      <input class="form-control" id="password2" name="password2" required type="password" value="">
+    <div class="col-md-6 mb-3">
+      <label for="repeat_password">Write password again</label>
+      <input class="form-control" id="repeat_password" name="repeat_password" required type="password" value="">
+    </div>
   </div>
-  </div>
-  
-    {% for error in form2.password2.errors %}
-    <li>{{ error }}</li>
-     {% endfor %}
+
+  {% for error in accountform.repeat_password.errors %}
+  <li>{{ error }}</li>
+  {% endfor %}
 
   <input class="btn btn-primary" id="submit" name="submit" type="submit" value="Add a new user">
 </form>

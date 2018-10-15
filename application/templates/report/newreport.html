@@ -2,28 +2,28 @@
 
 {% block body %}
 
-<form method="POST" action="{{url_for('report_create', naturesite_id = naturesite.id) }}"novalidate>
+<form method="POST" action="{{url_for('report_create', naturesite_id = naturesite.id) }}" novalidate>
   <div class="form-row">
-  <div class="col-md-6 mb-3">
-    <label for="title">Title</label>
+    <div class="col-md-6 mb-3">
+      <label for="title">Title</label>
       <input class="form-control" id="title" name="title" required type="text" value="">
+    </div>
   </div>
-  </div>
-     
-     {% for error in form.title.errors %}
-  <li>{{ error }}</li>
- {% endfor %}
 
- <div class="form-row"> 
-  <div class="col-md-6 mb-3">
-    <label for="description">Description</label>
+  {% for error in form.title.errors %}
+  <li>{{ error }}</li>
+  {% endfor %}
+
+  <div class="form-row">
+    <div class="col-md-6 mb-3">
+      <label for="description">Description</label>
       <input class="form-control" id="description" name="description" required type="text" value="">
+    </div>
   </div>
-</div>
-     
-{% for error in form.description.errors %}
- <li>{{ error }}</li>
-{% endfor %}
+
+  {% for error in form.description.errors %}
+  <li>{{ error }}</li>
+  {% endfor %}
 
   <input class="btn btn-primary" id="submit" name="submit" type="submit" value="Add a new report">
 </form>
