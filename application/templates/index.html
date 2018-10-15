@@ -3,6 +3,26 @@
 {% block body %}
 <p class="h1">Nature sites and reports</p>
 
+{% if users_and_reports is defined %}
+<p class="h4">The current situation</p>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">User</th>
+      <th scope="col">Number of created reports</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for user in users_and_reports %}
+    <tr>
+      <td> {{user.name}}</td>
+      <td> {{user.amount}}</td>
+    </tr>
+    {% endfor %}S
+  </tbody>
+</table>
+{% endfor %}
 
 
 {% endblock %}
