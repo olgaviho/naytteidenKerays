@@ -23,9 +23,7 @@ class Report(Base):
     def allreports():
         stmt = text("SELECT Report.title, Account.name, Report.description, Nature_site.name, COUNT(Comment.id) FROM Report"
                     " LEFT JOIN Account ON Report.account_id = Account.id"
-                    " LEFT JOIN Nature_site ON Report.naturesite_id = Nature_site.id"
-                    " LEFT JOIN Comment ON Comment.report_id = report.id"
-                    " GROUP BY report.id") 
+                    " LEFT JOIN Nature_site ON Report.naturesite_id = Nature_site.id") 
     
         res=db.engine.execute(stmt)
     
