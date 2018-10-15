@@ -6,36 +6,61 @@ Tietokantaan liittyvät _create table_ -lauseet:
 
 ```
 CREATE TABLE account (
-    id INTEGER NOT NULL, 
-    date_created DATETIME, 
-    date_modified DATETIME, 
-    name VARCHAR(144) NOT NULL, 
-    username VARCHAR(144) NOT NULL, 
-    password VARCHAR(144) NOT NULL, 
-    PRIMARY KEY (id)
+	id INTEGER NOT NULL, 
+	date_created DATETIME, 
+	date_modified DATETIME, 
+	name VARCHAR(144) NOT NULL, 
+	username VARCHAR(144) NOT NULL, 
+	password VARCHAR(144) NOT NULL, 
+	PRIMARY KEY (id)
 );
 ```
 ```
-CREATE TABLE naturesites (
-    PRIMARY KEY (id)
+CREATE TABLE nature_site (
+	id INTEGER NOT NULL, 
+	date_created DATETIME, 
+	date_modified DATETIME, 
+	name VARCHAR(144) NOT NULL, 
+	description VARCHAR(144), 
+	account_id INTEGER NOT NULL, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(account_id) REFERENCES account (id)
 );
 ```
 ```
 CREATE TABLE report (
-    PRIMARY KEY (id)
+	id INTEGER NOT NULL, 
+	date_created DATETIME, 
+	date_modified DATETIME, 
+	title VARCHAR(144), 
+	description VARCHAR(144), 
+	account_id INTEGER NOT NULL, 
+	naturesite_id INTEGER NOT NULL, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(account_id) REFERENCES account (id), 
+	FOREIGN KEY(naturesite_id) REFERENCES nature_site (id)
 );
 ```
 ```
-CREATE TABLE comments (
-    PRIMARY KEY (id)
+CREATE TABLE comment (
+	id INTEGER NOT NULL, 
+	date_created DATETIME, 
+	date_modified DATETIME, 
+	text VARCHAR(144), 
+	account_id INTEGER NOT NULL, 
+	report_id INTEGER NOT NULL, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(account_id) REFERENCES account (id), 
+	FOREIGN KEY(report_id) REFERENCES report (id)
 );
+CREATE INDEX idx_account_id ON report (account_id);
 ```
 
 ## Tietokannan indeksit <h4>
   
 Indeksit nopeuttavat tiedonhakua taulusta. Pääavaimille indeksit on luotu automaattisesti, mutta sille viite-avaimelle, jota käytetään sovelluksen sql-kyselyissä, on luotu myös indeksi Herokun tietokantaan. Indeksi on luotu seuraavalla tavalla:
 ```
-CREATE INDEX idx_account_id_report ON report (account_id);
+CREATE INDEX idx_account_id ON report (account_id);
 ```
 
   
