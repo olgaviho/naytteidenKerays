@@ -62,8 +62,8 @@ Kommentteja selatessa voi kommenttia muokata painamalla nappulaa _Edit_, josta p
 
 Sovellukseen on jäänyt muutamia puutteita, esimerkiksi seuraavia asioita voisi vielä parantaa:
 
-- Osa kielletyistä toiminnoista ei ole käyttäjältä piilossa. Esimerkiksi _edit_ painike on jokaisen kommentin kohdalla, mutta se toimii vain omien kommenttien kohdalla.
-- Kielletyn toiminnan tekeminen vie aina kirjautumissivulle, mikä ei ole kaikkein tyylikkäin ratkaisu kaikissa tilanteissa
+- Koodissa on jonkun verran copypastea error -sivulle viemisen osalta
+- html sivuilla ei ole määritelty kieltä
 - Sivutus ei ole käytössä
 
 # Oma kokemukseni tietokantasovelluksen teosta <h19>
