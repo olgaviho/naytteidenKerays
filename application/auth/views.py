@@ -55,5 +55,5 @@ def auth_create():
     db.session().add(u)
     db.session().commit()
   
-    return redirect(url_for("naturesites_index"))
+    return redirect(url_for("index"))
                                

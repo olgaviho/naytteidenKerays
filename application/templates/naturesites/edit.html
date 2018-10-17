@@ -2,61 +2,22 @@
 
 {% block body %}
 
-
 <p class="h3">{{naturesite.name}}</p>
 <p class="h4">{{naturesite.description}}</p>
- 
- <form method="POST" action="{{ url_for('naturesite_change_description', naturesite_id=naturesite.id) }}" novalidate>
-  <div class="form-row">
-  <div class="col-md-6 mb-3">
-    <label for="description">Write new description</label>
-      <input class="form-control" id="description" name="description" required type="text" value="">
-  </div>
-  </div>
-  
-  {% for error in form.description.errors %}
- <li>{{ error }}</li>
-  {% endfor %}
 
-  <input class="btn btn-primary" id="submit" name="submit" type="submit" value="Change description">
-</form>
-              
-<p></p>
- <p class="h5">Reports</p>
-
-<table class="table">
-  <thead>
-    <tr>
-        <th scope="col">Title</th>
-        <th scope="col">Author</th>
-        <th scope="col">Description</th>
-        <th scope="col"></th>
-    </tr>
-   </thead>
-    <tbody>
-    {% for report in naturesite.reports %}
-    <tr>
-        <td>
-            <a href="{{ url_for('report_edit', report_id = report.id, naturesite_id = naturesite.id) }}">{{ report. title }}</a>
-        </td>
-        <td>
-            {{ report.account.username }}
-        </td>
-        <td>
-            {{ report.description }}
-        </td>
-        <td>
-            <a href="{{ url_for('show_comments', report_id = report.id, naturesite_id = naturesite.id) }}">Comments</a>
-        </td>
-    </tr>
+<form method="POST" action="{{ url_for('naturesite_change_description', naturesite_id=naturesite.id) }}" novalidate>
+    <div class="form-row">
+    <div class="col-md-6 mb-3">
+      <label for="description">Write new description</label>
+        <input class="form-control" id="description" name="description" required type="text" value="">
+    </div>
+    </div>
+    
+    {% for error in form.description.errors %}
+   <li>{{ error }}</li>
     {% endfor %}
-  </tbody>     
-</table>
-<p></p>
-
-
-<form method="GET" action="{{ url_for('report_createform', naturesite_id = naturesite.id) }}" >
- <input class="btn btn-primary" id="submit" name="submit" type="submit" value="Create new report">
-</form>
+  
+    <input class="btn btn-primary" id="submit" name="submit" type="submit" value="Change description">
+  </form>
 
 {% endblock %}

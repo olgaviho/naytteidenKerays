@@ -9,7 +9,7 @@ from application.report.forms import NewReportForm
 from application.auth.models import User
 from application.report.forms import ReportEditForm
 
-@app.route("/naturesites/edit/<naturesite_id>/report/", methods=["GET"])
+@app.route("/naturesites/show/<naturesite_id>/report/", methods=["GET"])
 @login_required
 def report_createform(naturesite_id):
     n = NatureSite.query.get(naturesite_id)
@@ -20,7 +20,7 @@ def report_createform(naturesite_id):
     return render_template("report/newreport.html", form = NewReportForm(), naturesite=n)
 
 
-@app.route("/naturesites/edit/<naturesite_id>/report/create/", methods=["POST"])
+@app.route("/naturesites/show/<naturesite_id>/report/create/", methods=["POST"])
 @login_required
 def report_create(naturesite_id):
    
@@ -41,7 +41,7 @@ def report_create(naturesite_id):
     db.session().add(r)
     db.session().commit()
   
-    return redirect(url_for("naturesite_edit", naturesite_id=naturesite_id)) 
+    return redirect(url_for("naturesite_show", naturesite_id=naturesite_id)) 
 
 @app.route("/reports/", methods=["GET"])
 def report_index():
@@ -68,7 +68,7 @@ def report_edit(report_id, naturesite_id):
     return render_template("report/edit.html", form=ReportEditForm(), report = r, naturesite_id= naturesite_id )     
 
 
-@app.route("/naturesites/edit/<report_id>/<naturesite_id>/description/", methods=["POST"])
+@app.route("/naturesites/show/<report_id>/<naturesite_id>/description/", methods=["POST"])
 @login_required
 def report_change_description(report_id, naturesite_id):
 
@@ -93,10 +93,10 @@ def report_change_description(report_id, naturesite_id):
     r.description = form.description.data
     db.session().commit()
   
-    return redirect(url_for("naturesite_edit", naturesite_id=naturesite_id))
+    return redirect(url_for("naturesite_show", naturesite_id=naturesite_id))
 
 
-@app.route("/naturesites/edit/<report_id>/<naturesite_id>/delete", methods=["POST"])
+@app.route("/naturesites/show/<report_id>/<naturesite_id>/delete", methods=["POST"])
 @login_required
 def delete_report(report_id, naturesite_id):
 
@@ -113,9 +113,12 @@ def delete_report(report_id, naturesite_id):
     if r.account_id != current_user.id:
         return login_manager.unauthorized()
 
+    for c in r.comments:
+        db.session.delete(c)
+
     db.session.delete(r)
     db.session().commit()
   
-    return redirect(url_for("naturesite_edit", naturesite_id=naturesite_id))     
+    return redirect(url_for("naturesite_show", naturesite_id=naturesite_id))     
 
 

@@ -10,8 +10,8 @@ class Report(Base):
     title = db.Column(db.String(144), nullable=True)
     description = db.Column(db.String(144), nullable=True)
 
-    account_id = db.Column(db.Integer, db.ForeignKey('account.id'), nullable=False)
-    naturesite_id = db.Column(db.Integer, db.ForeignKey('nature_site.id'), nullable=False)
+    account_id = db.Column(db.Integer, db.ForeignKey('account.id'), nullable=True)
+    naturesite_id = db.Column(db.Integer, db.ForeignKey('nature_site.id'), nullable=True)
 
     comments = db.relationship("Comment", backref='report', lazy = True)
 
@@ -31,3 +31,4 @@ class Report(Base):
         for row in res:
             response.append({"title": row[0], "author": row[1], "description": row[2], "naturesite": row[3]})    
         return response     
+   

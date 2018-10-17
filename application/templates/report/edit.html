@@ -5,28 +5,28 @@
 <p class="h3">Title: {{report.title}} </p>
 <p class="h4">{{report.description}}</p>
 
-<p class="h4">Edit description</p>
+<form method="POST" action="{{ url_for('report_change_description', report_id = report.id, naturesite_id = naturesite_id) }}"
+  novalidate>
 
- <form method="POST" action="{{ url_for('report_change_description', report_id = report.id, naturesite_id = naturesite_id) }}" novalidate>
-
- <div class="form-row"> 
-  <div class="col-md-6 mb-3">
-    <label for="description">New Description</label>
+  <div class="form-row">
+    <div class="col-md-6 mb-3">
+      <label for="description">New Description</label>
       <input class="form-control" id="description" name="description" required type="text" value="">
+    </div>
   </div>
-</div>
-     
-   {% for error in form.description.errors %}
-    <li>{{ error }}</li>
-   {% endfor %}
+
+  {% for error in form.description.errors %}
+  <li>{{ error }}</li>
+  {% endfor %}
 
   <input class="btn btn-primary" id="submit" name="submit" type="submit" value="Change description">
 </form>
 <p></p>
 <p class="h4">Delete report</p>
 
- <form method="POST" action="{{ url_for('delete_report', report_id = report.id, naturesite_id = naturesite_id) }}" novalidate>
-     <input class="btn btn-primary" id="submit" name="submit" type="submit" value="Delete">
-    </form>
+<form method="POST" action="{{ url_for('delete_report', report_id = report.id, naturesite_id = naturesite_id) }}"
+  novalidate>
+  <input class="btn btn-primary" id="submit" name="submit" type="submit" value="Delete">
+</form>
 
 {% endblock %}

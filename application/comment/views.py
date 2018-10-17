@@ -83,7 +83,7 @@ def comment_change_description(report_id, naturesite_id, comment_id):
         return login_manager.unauthorized()
     
     if not form.validate():
-        return render_template("comment/edit.html", form2=form, report = report_id, naturesite_id = naturesite_id, comment= c)    
+        return render_template("comment/edit.html", form=form, report = report_id, naturesite_id = naturesite_id, comment= c)    
 
     c.text = request.form.get("newtext")
     db.session().commit()
@@ -93,7 +93,7 @@ def comment_change_description(report_id, naturesite_id, comment_id):
 
 @app.route("/comment/<report_id>/<naturesite_id>/<comment_id>/delete/", methods=["POST"])
 @login_required
-def delete_comment( report_id, naturesite_id, comment_id):
+def delete_comment(report_id, naturesite_id, comment_id):
 
     r = Report.query.get(report_id)
 
