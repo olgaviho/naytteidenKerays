@@ -2,11 +2,11 @@
 
 Kyseessä on erilaisten luontokohteiden ympäristön seuraamisen helpottamiseen kehitetty sovellus. Luontokohteisiin liittyy nimi, kuvaus ja raportit. Käyttäjät, jotka ovat kirjautuneet järjestelmään, voivat luoda sinne uusia luontokohteita, sekä muokata niiden kuvausta.
 
-Raportilla on otsikko, jontka jälkeen käyttäjä kirjaa ylös havaintoja esimerkiksi haju, sinilevätilanne, nähdyt lintulajit. Omia rapotteja voi myös muokata jälkikäteen sekä poistaa. Toisen raportteja ei voi muokata.
+Raportilla on otsikko, jontka jälkeen käyttäjä kirjaa ylös havaintoja esimerkiksi haju, sinilevätilanne, nähdyt lintulajit. Omia rapotteja voi myös muokata jälkikäteen sekä poistaa. Toisen raportteja ei voi muokata eikä poistaa.
 
 Sovelluksessa voi katsoa yhteenvetoja kaikista järjestelmään luoduista raporteista.
 
-Raportteja voi myös kommentoida, mikäli niissä tulee esiin jotain, josta haluaa keskustella. Omia kommentteja voi poistaa ja muokata jälkikäteen.
+Raportteja voi myös kommentoida, mikäli niissä tulee esiin jotain, josta haluaa keskustella. Vain omia kommentteja voi poistaa ja muokata jälkikäteen.
 
 Harjoitustyö mukailee seuraavaa [aihetta](http://advancedkittenry.github.io/suunnittelu_ja_tyoymparisto/aiheet/Tutkimusaineston_kerays.html).
 
