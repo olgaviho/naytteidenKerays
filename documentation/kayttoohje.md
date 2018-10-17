@@ -18,7 +18,7 @@ Kirjautuminen onnistuu valitsemalla oikeasta yläkulmasta vaihtoehdon _login_. Y
 Jos käyttäjän luonti onnistuu, siirrytään aloitussivulle. Uloskirjatuminen onnistuu klikkamalla ylhäältä painiketta _log out_.
 
 ## Uuden käyttäjän luominen <h6>
-Aloitussivulta pääsee luomaan uuden käyttäjän klikkaamalla _Create user_. Uusi käyttäjä luodaan syöttämällä tiedot syötekenttiin ja painamalla _Add a new user_. Jos käyttäjän luonti onnistuu, siirrytään sivulle, jossa on kaikki tällä hetkellä järjestelmään luodut luontokohteet kuvauksineen.
+Aloitussivulta pääsee luomaan uuden käyttäjän klikkaamalla _Create user_. Uusi käyttäjä luodaan syöttämällä tiedot syötekenttiin ja painamalla _Add a new user_. Jos käyttäjän luonti onnistuu, siirrytään aloitussivulle.
 
 ## Luontokohteiden selaaminen <h7> 
 Luontokohteita pääsee selaamaan, vaikka ei olisi kirjautunut sisään järjestelmään. Valitsemalla ylhäältä _List nature sites_ näkee kaikki tämän hetkiset luontokohteet.
@@ -32,10 +32,10 @@ Raportteja pääsee selaamaan, vaikka ei olisi kirjautunut sisään järjestelm�
 Uuden luontokohteen voi luoda valitsemalla ylhäällä olevasta valikosta _Add a nature site_. Luontokohteelle pitää antaa nimi sekä kuvaus ja sen jälkeen klikata painiketta _Add a new nature site_. Kahdella luontokohteella ei voi olla samaa nimeä.
 
 ## Luontokohteen kuvauksen muuttaminen <h11>
-Luontokohteita selatessa voi klikata luontokohteen linkkiä, josta pääsee muokkaamaan kuvausta. Luontokohteen kuvausta voi muuttaa kirjoittamalla kohtaan _Edit description_ uuden kuvauksen ja painamalla painiketta _Change description_. Vain alkuperäisen luonotohteen luoja voi muuttaa kuvausta. 
+Luontokohteita selatessa voi klikata luontokohteen linkkiä, josta pääsee katsomaan luotokohdetta tarkemmin Painamlla painiketta _edit_ pääsee muokkaamaan kuvausta. Luontokohteen kuvausta voi muuttaa kirjoittamalla kohtaan _Edit description_ uuden kuvauksen ja painamalla painiketta _Change description_. Vain alkuperäisen luontokohteen luoja voi muuttaa kuvausta. Mikäli, yrittää muokata toisen luomaa luontokohdetta, päätyy kirjautumissivulle.
 
 ## Luontokohteen raporttien selaaminen <h12>
-Luontokohteita selatessa voi klikata luotokohteen nimeä, josta pääsee katsomaan kyseiselle luontokohteelle luotuja raportteja.
+Luontokohteita selatessa voi klikata luontokohteen nimeä, josta pääsee katsomaan kyseiselle luontokohteelle luotuja raportteja.
 
 ## Raportin luominen <h13>
 Kenen tahansa luomaan luontokohteeseen voi luoda uuden raportin. Uuden raportin voi luoda valitsemalla alhaalta. _Create new report_. Raportille pitää antaa otsikko sekä kuvaus ja sen jälkeen klikata painiketta _Add a new report_. Kuvaukseen voi kirjoittaa esimerkiksi mitä lintulajeja on havainnut vieraillessaan luontokohteella.
@@ -50,7 +50,7 @@ Raportin kommentteja voi katsoa klikkamalla kohtaa _comments_.
 Kenen tahansa luomaan raporttiin voi luoda uuden kommentin kirjoittamalla sen kohtaan _write a new comment_. Kommentin kirjoittamisen jälkeen pitää klikata painiketta _Add a new comment_.
 
 ## Kommentin muokkaaminen ja poistaminen <h17>
-Kommentteja selatessa voi kommenttia muokata painamalla nappulaa _Edit_, josta pääsee kommentin muokkaussivulle. Uuden tekstin voi kirjoittaa kohtaan _Write new text_ ja painamalla painiketta _Change text_, muuttuu kommentin sisältö. Kommentin voi poistaa muokkaussivulla painamalla painiketta _Delete_. Vain omia kommentteja voi muokata tai poistaa. Mikäli, yrittää muokata tai poistaa toisen luomaa kommenttia, päätyy kirjautumissivulle.
+Kommentteja selatessa voi kommenttia muokata painamalla nappulaa _Edit_, josta pääsee kommentin muokkaussivulle. Uuden tekstin voi kirjoittaa kohtaan _Write new text_ ja painamalla painiketta _Change text_, muuttuu kommentin sisältö. Kommentin voi poistaa muokkaussivulla painamalla painiketta _Delete_. Vain omia kommentteja voi muokata tai poistaa. Mikäli, yrittää muokata tai poistaa toisen luomaa kommenttia, päätyy kirjautumissivulle. Kuitenkin, jos raportin kirjoittaja päättää poistaa raporttinsa, poistuvat myös siihen liittyvät kommentit.
 
 
 # Sovellukseen jääneet puutteet <h18>
