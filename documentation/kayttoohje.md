@@ -2,14 +2,19 @@
 Lataa git-repositorio zippinä tietokoneellesi klikkaamalla etusivulla painiketta _clone or download_. Pura paketti sopivaan kohtaan koneellesi. 
 
 ## Ohjelman käynnistäminen <h2>
-(Ennen käynnistystä pitää aktivoida venvin virtuaaliympäristö?) Ohjelma käynnistetään komennolla:
+Ennen käynnistystä pitää aktivoida venvin virtuaaliympäristö ja päivittää riippuvuudet komennolla:
+```
+pip install -r requirements.txt
+```
+
+Ohjelma käynnistetään komennolla:
 ```
 python3 run.py
 ```
 
 # Käyttöohje <h3>
   
-## Aloittusivu <h4> 
+## Aloitussivu <h4> 
  
 Aloitussivulle pääsee aina klikkaamalla yläpalkissa kohtaa _Nature sites and reports_. Aloitussivulla on lueteltu sovelluksen käyttäjät ja heidän luomat raportit.
 
