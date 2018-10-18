@@ -2,14 +2,19 @@
 Lataa git-repositorio zippinä tietokoneellesi klikkaamalla etusivulla painiketta _clone or download_. Pura paketti sopivaan kohtaan koneellesi. 
 
 ## Ohjelman käynnistäminen <h2>
-(Ennen käynnistystä pitää aktivoida venvin virtuaaliympäristö?) Ohjelma käynnistetään komennolla:
+Ennen käynnistystä pitää aktivoida venvin virtuaaliympäristö ja päivittää riippuvuudet komennolla:
+```
+pip install -r requirements.txt
+```
+
+Ohjelma käynnistetään komennolla:
 ```
 python3 run.py
 ```
 
 # Käyttöohje <h3>
   
-## Aloittusivu <h4> 
+## Aloitussivu <h4> 
  
 Aloitussivulle pääsee aina klikkaamalla yläpalkissa kohtaa _Nature sites and reports_. Aloitussivulla on lueteltu sovelluksen käyttäjät ja heidän luomat raportit.
 
@@ -57,8 +62,8 @@ Kommentteja selatessa voi kommenttia muokata painamalla nappulaa _Edit_, josta p
 
 Sovellukseen on jäänyt muutamia puutteita, esimerkiksi seuraavia asioita voisi vielä parantaa:
 
-- Osa kielletyistä toiminnoista ei ole käyttäjältä piilossa. Esimerkiksi _edit_ painike on jokaisen kommentin kohdalla, mutta se toimii vain omien kommenttien kohdalla.
-- Kielletyn toiminnan tekeminen vie aina kirjautumissivulle, mikä ei ole kaikkein tyylikkäin ratkaisu kaikissa tilanteissa
+- Koodissa on jonkun verran copypastea error -sivulle viemisen osalta
+- html sivuilla ei ole määritelty kieltä
 - Sivutus ei ole käytössä
 
 # Oma kokemukseni tietokantasovelluksen teosta <h19>
