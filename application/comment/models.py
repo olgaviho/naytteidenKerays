@@ -18,4 +18,4 @@ class Comment(Base):
         if autid == self.account_id:
             return True
         else:
-            return false
+            return False
