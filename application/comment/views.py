@@ -25,7 +25,7 @@ def show_comments(report_id, naturesite_id):
     if not n:
         return render_template("error.html",  message = "ERROR! Can't find the Nature site")
 
-    return render_template("comment/index.html", form=NewCommentForm(), report = Report.query.get(report_id), naturesite = NatureSite.query.get(naturesite_id)) 
+    return render_template("comment/index.html", form=NewCommentForm(), report = Report.query.get(report_id), naturesite = NatureSite.query.get(naturesite_id), id = current_user.id) 
 
 @app.route("/comment/<report_id>/<naturesite_id>/newcomment/", methods=["POST"])
 @login_required
