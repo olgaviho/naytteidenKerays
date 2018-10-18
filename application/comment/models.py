@@ -13,3 +13,9 @@ class Comment(Base):
 
     def __init__(self, text):
         self.text = text
+    
+    def isMyAuthor(autid):
+        if autid == id:
+            return True
+        else:
+            return false
