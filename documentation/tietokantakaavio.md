@@ -1,6 +1,6 @@
 # Tietokantakaavio
 
-![alt text](https://raw.githubusercontent.com/olgaviho/naytteidenKerays/master/documentation/pictures/tietokantakaavio3.jpg)
+![alt text](https://raw.githubusercontent.com/olgaviho/naytteidenKerays/master/documentation/pictures/tietokantakaavio4.JPG)
 
 Tietokantaan liittyvät _create table_ -lauseet:
 
