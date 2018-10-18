@@ -15,7 +15,7 @@ class Comment(Base):
         self.text = text
     
     def isMyAuthor(autid):
-        if autid == id:
+        if autid == account_id:
             return True
         else:
             return false
