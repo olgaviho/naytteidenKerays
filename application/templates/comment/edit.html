@@ -4,8 +4,6 @@
 
 <p class="h3">Comment: {{ comment.text }}</p>
 
-<p class="h5">Edit comment:</p>
-
 <form method="POST" action="{{ url_for('comment_change_description', report_id = report_id, naturesite_id = naturesite_id, comment_id = comment.id) }}"
     novalidate>
     <div class="form-row">

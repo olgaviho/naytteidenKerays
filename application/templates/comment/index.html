@@ -4,7 +4,7 @@
 
 <p class="h3">Report: {{ report.title }}</p>
 <p class="h5">{{ report.description }}</p>
-<p class="h4">Comments:</p>
+<p align = "center", class="h4">Comments:</p>
 
 
 <table class="table">
@@ -12,7 +12,7 @@
         <tr>
             <th scope="col">Author</th>
             <th scope="col">Text</th>
-            <th scope="col">Edit</th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -24,14 +24,7 @@
             <td>
                 {{ comment.text }}
             <td>
-                <form method="GET" action="{{url_for('comment_edit', report_id = report.id, naturesite_id=naturesite.id, comment_id = comment.id) }}"
-                    novalidate>
-                    <div class="form-row">
-                        <div class="col-md-6 mb-3">
-                            <input class="btn btn-primary" id="submit" name="submit" type="submit" value="Edit comment">
-                        </div>
-                    </div>
-                </form>
+                <a href="{{ url_for('comment_edit', report_id = report.id, naturesite_id=naturesite.id, comment_id = comment.id) }}"> Edit comment</a>
             </td>
         </tr>
         {% endfor %}

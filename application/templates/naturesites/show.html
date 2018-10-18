@@ -6,14 +6,13 @@
 <p class="h3">{{naturesite.name}}</p>
 <p class="h4">{{naturesite.description}}</p>
 
-<form method="GET" action="{{url_for('naturesite_edit', naturesite_id=naturesite.id) }}"
-    novalidate>
-    <div class="form-row">
-        <div class="col-md-6 mb-3">
-            <input class="btn btn-primary" id="submit" name="submit" type="submit" value="Edit naturesite">
-        </div>
-    </div>
-</form>
+
+<p align="right">
+    <a href="{{ url_for('naturesite_edit', naturesite_id = naturesite.id) }}">Edit nature site |</a>
+    <a href="{{ url_for('report_createform', naturesite_id = naturesite.id) }}"> Create a new report</a>
+</p>
+
+
 
 
 <p class="h5">Reports</p>
@@ -31,8 +30,7 @@
         {% for report in naturesite.reports %}
         <tr>
             <td>
-                <a href="{{ url_for('report_edit', report_id = report.id, naturesite_id = naturesite.id) }}">{{ report.
-                    title }}</a>
+                {{ report.title }}
             </td>
             <td>
                 {{ report.account.username }}
@@ -41,17 +39,13 @@
                 {{ report.description }}
             </td>
             <td>
-                <a href="{{ url_for('show_comments', report_id = report.id, naturesite_id = naturesite.id) }}">Comments</a>
+                <a href="{{ url_for('show_comments', report_id = report.id, naturesite_id = naturesite.id) }}">Comments |</a>
+                <a href="{{ url_for('report_edit', report_id = report.id, naturesite_id = naturesite.id) }}"> Edit report</a>
             </td>
         </tr>
         {% endfor %}
     </tbody>
 </table>
-<p></p>
 
-
-<form method="GET" action="{{ url_for('report_createform', naturesite_id = naturesite.id) }}">
-    <input class="btn btn-primary" id="submit" name="submit" type="submit" value="Create new report">
-</form>
 
 {% endblock %}
