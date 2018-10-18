@@ -54,19 +54,21 @@ CREATE TABLE comment (
 	FOREIGN KEY(report_id) REFERENCES report (id)
 );
 CREATE INDEX idx_account_id ON report (account_id);
+CREATE INDEX idx_naturesite_id ON report (naturesite_id);
+
 ```
 
 ## Tietokannan indeksit <h4>
   
-Indeksit nopeuttavat tiedonhakua taulusta. Pääavaimille indeksit on luotu automaattisesti, mutta sille viite-avaimelle, jota käytetään sovelluksen sql-kyselyissä, on luotu myös indeksi Herokun tietokantaan. Indeksi on luotu seuraavalla tavalla:
+Taulujen pääavaimille indeksit on luotu automaattisesti, mutta niille viiteavaimelle, joita käytetään sovelluksen sql-kyselyissä, on luotu myös indeksi Herokun tietokantaan. Indeksi on luotu seuraavalla tavalla:
 ```
 CREATE INDEX idx_account_id ON report (account_id);
+CREATE INDEX idx_naturesite_id ON report (naturesite_id);
 ```
 
   
 ## Tietokannan normalisointi <h5>
-Normalisoinnin tavoite on vähentää tauluissa esiintyvää toisteista tietoa.
-  
+
 Kaikki taulut ovat ensimmäisessä normaalimuodossa, sillä sarakkeissa ei ole listoja, sarakkeiden arvot ovat samaa tyyppiä ja kaksi riviä erottaa toisistaan vähintään id. Ensimmäiselle normaalimuodolle on myös muita vaatimuksia, jotka kaikki täyttyvät: taulun sarakkeet eivät muodosta toistuvia ryhmiä, sarakkeiden nimet ovat uniikkeja taulussaan, sarakkeiden ja rivien järjestys ei vaikuta taulun toimintaan.
 
 Taulut ovat myös toisessa normaalimuodossa, koska se on ensimmäisessä normaalimuodossa ja jokaisella taululla on tasan yksi pääaivain (id) ja muut sarakkeen arvot ovat funktionaalisesti riippuvia siitä.
