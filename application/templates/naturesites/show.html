@@ -41,7 +41,7 @@
                 {{ report.description }}
             </td>
             <td>
-                {% if naturesite.isMyAuthor(id) %}
+                {% if report.isMyAuthor(id) %}
                 <a href="{{ url_for('report_edit', report_id = report.id, naturesite_id = naturesite.id) }}"> Edit
                     report |</a>
                 {% endif %}

@@ -3,24 +3,24 @@
 {% block body %}
 <table class="table">
   <thead>
-  <tr>
-    <th scope="col">Nature site</th>
-    <th scope="col">Description</th>
-  </tr>
+    <tr>
+      <th scope="col">Nature site</th>
+      <th scope="col">Description</th>
+    </tr>
   </thead>
   <tbody>
-  {% for naturesite in naturesites %}
-  <tr>
-    <td>
-      {% if current_user.is_authenticated %}
-      <a href="{{ url_for('naturesite_show', naturesite_id = naturesite.id) }} "> {{ naturesite.name }}</a>
-      {% else %}
-      {{ naturesite.name }}
-      {% endif %}
-    </td>
-    <td>{{ naturesite.description }}</td>
-  </tr>
-  {% endfor %}
- </tbody>
+    {% for naturesite in naturesites %}
+    <tr>
+      <td>
+        {% if current_user.is_authenticated %}
+        <a href="{{ url_for('naturesite_show', naturesite_id = naturesite.id) }} "> {{ naturesite.name }}</a>
+        {% else %}
+        {{ naturesite.name }}
+        {% endif %}
+      </td>
+      <td>{{ naturesite.description }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
 </table>
 {% endblock %}

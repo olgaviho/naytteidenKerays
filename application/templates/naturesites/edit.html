@@ -6,18 +6,18 @@
 <p class="h4">{{naturesite.description}}</p>
 
 <form method="POST" action="{{ url_for('naturesite_change_description', naturesite_id=naturesite.id) }}" novalidate>
-    <div class="form-row">
+  <div class="form-row">
     <div class="col-md-6 mb-3">
       <label for="description">Write new description</label>
-        <input class="form-control" id="description" name="description" required type="text" value="">
+      <input class="form-control" id="description" name="description" required type="text" value="">
     </div>
-    </div>
-    
-    {% for error in form.description.errors %}
-   <li>{{ error }}</li>
-    {% endfor %}
-  
-    <input class="btn btn-primary" id="submit" name="submit" type="submit" value="Change description">
-  </form>
+  </div>
+
+  {% for error in form.description.errors %}
+  <li>{{ error }}</li>
+  {% endfor %}
+
+  <input class="btn btn-primary" id="submit" name="submit" type="submit" value="Change description">
+</form>
 
 {% endblock %}

@@ -23,7 +23,8 @@
 
 <p class="h5">Delete comment</p>
 
-<form method="POST" action="{{ url_for('delete_comment', report_id = report_id, naturesite_id = naturesite_id, comment_id = comment.id) }}"novalidate>
+<form method="POST" action="{{ url_for('delete_comment', report_id = report_id, naturesite_id = naturesite_id, comment_id = comment.id) }}"
+    novalidate>
     <input class="btn btn-primary" id="submit" name="submit" type="submit" value="Delete">
 </form>
 

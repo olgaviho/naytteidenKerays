@@ -4,7 +4,7 @@
 
 <p class="h3">Report: {{ report.title }}</p>
 <p class="h5">{{ report.description }}</p>
-<p align = "center", class="h4">Comments:</p>
+<p align="center" , class="h4">Comments:</p>
 
 
 <table class="table">
@@ -25,7 +25,8 @@
                 {{ comment.text }}
             <td>
                 {% if comment.isMyAuthor(id) %}
-                <a href="{{ url_for('comment_edit', report_id = report.id, naturesite_id=naturesite.id, comment_id = comment.id) }}"> Edit comment</a>
+                <a href="{{ url_for('comment_edit', report_id = report.id, naturesite_id=naturesite.id, comment_id = comment.id) }}">
+                    Edit comment</a>
                 {% endif %}
             </td>
         </tr>
