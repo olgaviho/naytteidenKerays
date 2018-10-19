@@ -27,11 +27,11 @@ class Report(Base):
 
     @staticmethod
     def allreports():
-        stmt = text("SELECT Report.title, Account.name, Report.description, Nature_site.name, COUNT(comment.id) FROM Report"
+        stmt = text("SELECT Report.title, Account.username, Report.description, Nature_site.name, COUNT(comment.id) FROM Report"
                     " LEFT JOIN Account ON Report.account_id = Account.id"
                     " LEFT JOIN Nature_site ON Report.naturesite_id = Nature_site.id"
                     " LEFT JOIN Comment ON Comment.report_id = report.id"
-                    " GROUP BY Report.id, Account.name, Nature_site.name"
+                    " GROUP BY Report.id, Account.username, Nature_site.name"
                     ) 
     
         res=db.engine.execute(stmt)
