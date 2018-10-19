@@ -15,7 +15,7 @@ def report_createform(naturesite_id):
     n = NatureSite.query.get(naturesite_id)
     
     if not n:
-        return render_template("error.html",  message = "ERROR! Can't find the Nature site")
+        return render_template("error.html",  message = "ERROR! Nature site not found")
 
     return render_template("report/newreport.html", form = NewReportForm(), naturesite=n)
 
@@ -28,7 +28,7 @@ def report_create(naturesite_id):
     n = NatureSite.query.get(naturesite_id)
     
     if not n:
-        return render_template("error.html",  message = "ERROR! Can't find the Nature site")
+        return render_template("error.html",  message = "ERROR! Nature site not found")
 
     if not form.validate():
         return render_template("report/newreport.html", form = form, naturesite = n)
@@ -54,14 +54,13 @@ def report_edit(report_id, naturesite_id):
     r = Report.query.get(report_id)
 
     if not r:
-        return render_template("error.html",  message = "ERROR! Can't find the Report")  
+        return render_template("error.html",  message = "ERROR! Report not found")  
     
     n = NatureSite.query.get(naturesite_id)
     
     if not n:
-        return render_template("error.html",  message = "ERROR! Can't find the Nature site")
+        return render_template("error.html",  message = "ERROR! Nature site not found")
     
-
     if r.account_id != current_user.id:
         return login_manager.unauthorized()
     
@@ -75,12 +74,11 @@ def report_change_description(report_id, naturesite_id):
     r = Report.query.get(report_id)
 
     if not r:
-        return render_template("error.html",  message = "ERROR! Can't find the Report")  
+        return render_template("error.html",  message = "ERROR! Report not found")  
     n = NatureSite.query.get(naturesite_id) 
     
-
     if not n:
-        return render_template("error.html",  message = "ERROR! Can't find the Nature site")
+        return render_template("error.html",  message = "ERROR! Nature site not found")
 
     if r.account_id != current_user.id:
         return login_manager.unauthorized()
@@ -103,12 +101,12 @@ def delete_report(report_id, naturesite_id):
     r = Report.query.get(report_id)
 
     if not r:
-        return render_template("error.html",  message = "ERROR! Can't find the Report")  
+        return render_template("error.html",  message = "ERROR! Report not found")  
 
     n = NatureSite.query.get(naturesite_id)    
 
     if not n:
-        return render_template("error.html",  message = "ERROR! Can't find the Nature site")
+        return render_template("error.html",  message = "ERROR! Nature site not found")
 
     if r.account_id != current_user.id:
         return login_manager.unauthorized()

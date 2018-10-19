@@ -17,7 +17,6 @@ def auth_login():
     if not user:
         return render_template("auth/loginform.html", form = form,
                                 error = "No such username or password")
-
     login_user(user)
     return redirect(url_for("index"))
 
@@ -37,7 +36,6 @@ def auth_create():
     if not accountform.validate():
         return render_template("auth/registform.html", accountform = accountform)
 
-
     password = accountform.password.data
     repeat_password = accountform.repeat_password.data    
 
@@ -51,7 +49,6 @@ def auth_create():
     if sameuser:
         return render_template("auth/registform.html", accountform = accountform,
                                 error = "Username must be unique")                            
-
     db.session().add(u)
     db.session().commit()
   

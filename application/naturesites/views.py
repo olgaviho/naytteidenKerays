@@ -24,7 +24,6 @@ def naturesites_create():
 
     form = NatureSiteForm(request.form)
 
-
     if not form.validate():
         return render_template("naturesites/new.html", form = form)
 
@@ -34,7 +33,6 @@ def naturesites_create():
 
     if samenaturesite:
         return render_template("naturesites/new.html", form = form, error = "Name must be unique") 
-
 
     n.account_id = current_user.id
 
@@ -50,7 +48,7 @@ def naturesite_show(naturesite_id):
     n = NatureSite.query.get(naturesite_id)
 
     if not n:
-        return render_template("error.html",  message = "ERROR! Can't find the Nature site")
+        return render_template("error.html",  message = "ERROR! Nature site not found")
 
     return render_template("naturesites/show.html", naturesite=n, id = current_user.id)
 
@@ -61,14 +59,11 @@ def naturesite_edit(naturesite_id):
     n = NatureSite.query.get(naturesite_id)
     
     if not n:
-        return render_template("error.html",  message = "ERROR! Can't find the Nature site")
-
+        return render_template("error.html",  message = "ERROR! Nature site not found")
 
     if n.account_id != current_user.id:
         return login_manager.unauthorized()
 
-  
-    
     return render_template("naturesites/edit.html", form = NatureSiteEditForm(), naturesite = n)   
 
 @app.route("/naturesites/show/<naturesite_id>/edit/change/", methods=["POST"])
@@ -78,7 +73,7 @@ def naturesite_change_description(naturesite_id):
     n = NatureSite.query.get(naturesite_id)
     
     if not n:
-        return render_template("error.html",  message = "ERROR! Can't find the Nature site")
+        return render_template("error.html",  message = "ERROR! Nature site not found")
 
     if n.account_id != current_user.id:
         return login_manager.unauthorized()

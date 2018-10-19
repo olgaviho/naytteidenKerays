@@ -23,12 +23,12 @@ def show_comments(report_id, naturesite_id):
     r = Report.query.get(report_id)
 
     if not r:
-        return render_template("error.html",  message = "ERROR! Can't find the Report")  
+        return render_template("error.html",  message = "ERROR! Report not found")  
     
     n = NatureSite.query.get(naturesite_id)
     
     if not n:
-        return render_template("error.html",  message = "ERROR! Can't find the Nature site")
+        return render_template("error.html",  message = "ERROR! Nature site not found")
 
     return render_template("comment/index.html", form=NewCommentForm(), report = Report.query.get(report_id), naturesite = NatureSite.query.get(naturesite_id), id = current_user.id) 
 
@@ -39,12 +39,12 @@ def comment_create(report_id, naturesite_id,):
     r = Report.query.get(report_id)
 
     if not r:
-        return render_template("error.html",  message = "ERROR! Can't find the Report")  
+        return render_template("error.html",  message = "ERROR! Report not found")  
     
     n = NatureSite.query.get(naturesite_id)
     
     if not n:
-        return render_template("error.html",  message = "ERROR! Can't find the Nature site")
+        return render_template("error.html",  message = "ERROR! Nature site not found")
 
 
     form = NewCommentForm(request.form)
@@ -103,17 +103,17 @@ def delete_comment(report_id, naturesite_id, comment_id):
     r = Report.query.get(report_id)
 
     if not r:
-        return render_template("error.html",  message = "ERROR! Can't find the Report")  
+        return render_template("error.html",  message = "ERROR! Report not found")  
     
     n = NatureSite.query.get(naturesite_id)
     
     if not n:
-        return render_template("error.html",  message = "ERROR! Can't find the Nature site")
+        return render_template("error.html",  message = "ERROR! Nature site not found")
     
     c = Comment.query.get(comment_id)
 
     if not c:
-        return render_template("error.html",  message = "ERROR! Can't find the Comment")
+        return render_template("error.html",  message = "ERROR! Comment not found")
 
     if c.account_id != current_user.id:
         return login_manager.unauthorized()
@@ -130,17 +130,17 @@ def comment_edit(report_id, naturesite_id, comment_id):
     r = Report.query.get(report_id)
     
     if not r:
-        return render_template("error.html",  message = "ERROR! Can't find the Report")  
+        return render_template("error.html",  message = "ERROR! Report not found")  
     
     n = NatureSite.query.get(naturesite_id)
     
     if not n:
-        return render_template("error.html",  message = "ERROR! Can't find the Nature site")
+        return render_template("error.html",  message = "ERROR! Nature site not found")
 
     c = Comment.query.get(comment_id)
 
     if not c:
-        return render_template("error.html",  message = "ERROR! Can't find the Comment")
+        return render_template("error.html",  message = "ERROR! Comment not found")
 
     if c.account_id != current_user.id:
         return login_manager.unauthorized()
