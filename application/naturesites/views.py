@@ -66,6 +66,8 @@ def naturesite_edit(naturesite_id):
 
     if n.account_id != current_user.id:
         return login_manager.unauthorized()
+
+  
     
     return render_template("naturesites/edit.html", form = NatureSiteEditForm(), naturesite = n)   
 

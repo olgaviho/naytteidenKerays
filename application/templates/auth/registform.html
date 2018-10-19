@@ -7,7 +7,7 @@
   <div class="form-row">
     <div class="col-md-6 mb-3">
       <label for="name">Name</label>
-      <input class="form-control" id="name" name="name" required type="text" value="">
+      {{accountform.name(class_="form-control", required="required")}}
     </div>
   </div>
 
@@ -18,7 +18,7 @@
   <div class="form-row">
     <div class="col-md-6 mb-3">
       <label for="username">Userame</label>
-      <input class="form-control" id="username" name="username" required type="text" value="">
+      {{accountform.username(class_="form-control", required="required")}}
     </div>
   </div>
 
@@ -29,7 +29,7 @@
   <div class="form-row">
     <div class="col-md-6 mb-3">
       <label for="password">Password</label>
-      <input class="form-control" id="password" name="password" required type="password" value="">
+      {{accountform.password(class_="form-control", required="required")}}
     </div>
   </div>
 
@@ -40,7 +40,7 @@
   <div class="form-row">
     <div class="col-md-6 mb-3">
       <label for="repeat_password">Write password again</label>
-      <input class="form-control" id="repeat_password" name="repeat_password" required type="password" value="">
+      {{accountform.repeat_password(class_="form-control", required="required")}}
     </div>
   </div>
 

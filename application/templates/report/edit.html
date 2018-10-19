@@ -3,7 +3,7 @@
 {% block body %}
 
 <p class="h3">Title: {{report.title}} </p>
-<p class="h4">{{report.description}}</p>
+<p class="h4">Description: {{report.description}}</p>
 
 <form method="POST" action="{{ url_for('report_change_description', report_id = report.id, naturesite_id = naturesite_id) }}"
   novalidate>
@@ -11,7 +11,7 @@
   <div class="form-row">
     <div class="col-md-6 mb-3">
       <label for="description">New Description</label>
-      <input class="form-control" id="description" name="description" required type="text" value="">
+      {{form.description(class_="form-control", required="required", value=report.description)}}
     </div>
   </div>
 

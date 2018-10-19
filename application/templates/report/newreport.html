@@ -6,7 +6,7 @@
   <div class="form-row">
     <div class="col-md-6 mb-3">
       <label for="title">Title</label>
-      <input class="form-control" id="title" name="title" required type="text" value="">
+      {{form.title(class_="form-control", required="required")}}
     </div>
   </div>
 
@@ -17,7 +17,7 @@
   <div class="form-row">
     <div class="col-md-6 mb-3">
       <label for="description">Description</label>
-      <input class="form-control" id="description" name="description" required type="text" value="">
+      {{form.description(class_="form-control", required="required")}}
     </div>
   </div>
 
