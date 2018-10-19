@@ -14,3 +14,10 @@ class NatureSite(Base):
     def __init__(self, name, description):
         self.name = name
         self.description = description
+
+
+    def isMyAuthor(self, autid):
+        if autid == self.account_id:
+            return True
+        else:
+            return False    

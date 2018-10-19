@@ -52,7 +52,7 @@ def naturesite_show(naturesite_id):
     if not n:
         return render_template("error.html",  message = "ERROR! Can't find the Nature site")
 
-    return render_template("naturesites/show.html", naturesite=n)
+    return render_template("naturesites/show.html", naturesite=n, id = current_user.id)
 
 @app.route("/naturesites/show/<naturesite_id>/edit/", methods=["GET"])
 @login_required

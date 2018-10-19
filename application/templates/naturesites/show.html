@@ -8,7 +8,9 @@
 
 
 <p align="right">
+    {% if naturesite.isMyAuthor(id) %}
     <a href="{{ url_for('naturesite_edit', naturesite_id = naturesite.id) }}">Edit nature site |</a>
+    {% endif %}
     <a href="{{ url_for('report_createform', naturesite_id = naturesite.id) }}"> Create a new report</a>
 </p>
 
@@ -39,8 +41,11 @@
                 {{ report.description }}
             </td>
             <td>
-                <a href="{{ url_for('show_comments', report_id = report.id, naturesite_id = naturesite.id) }}">Comments |</a>
-                <a href="{{ url_for('report_edit', report_id = report.id, naturesite_id = naturesite.id) }}"> Edit report</a>
+                {% if naturesite.isMyAuthor(id) %}
+                <a href="{{ url_for('report_edit', report_id = report.id, naturesite_id = naturesite.id) }}"> Edit
+                    report |</a>
+                {% endif %}
+                <a href="{{ url_for('show_comments', report_id = report.id, naturesite_id = naturesite.id) }}">Comments</a>
             </td>
         </tr>
         {% endfor %}

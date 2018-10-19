@@ -19,6 +19,12 @@ class Report(Base):
         self.title = title
         self.description = description
 
+    def isMyAuthor(self, autid):
+        if autid == self.account_id:
+            return True
+        else:
+            return False     
+
     @staticmethod
     def allreports():
         stmt = text("SELECT Report.title, Account.name, Report.description, Nature_site.name FROM Report"
@@ -30,5 +36,6 @@ class Report(Base):
         response = []
         for row in res:
             response.append({"title": row[0], "author": row[1], "description": row[2], "naturesite": row[3]})    
-        return response     
+        return response 
+
    
