@@ -29,7 +29,7 @@ Uuden käyttäjän pääsee luomaan klikkaamalla _Create user_. Uusi käyttäjä
 Luontokohteita pääsee selaamaan, vaikka ei olisi kirjautunut sisään järjestelmään. Valitsemalla ylhäältä _List nature sites_ näkee kaikki tämän hetkiset luontokohteet.
 
 ## Raporttien selaaminen
-Raportteja pääsee selaamaan, vaikka ei olisi kirjautunut sisään järjestelmään. Valitsemalla ylhäältä _All reports_ näkee kaikki luodut raportit.  
+Raportteja pääsee selaamaan, vaikka ei olisi kirjautunut sisään järjestelmään. Valitsemalla ylhäältä _All reports_ näkee kaikki luodut raportit.
 
 # Seuraavat toiminnot ovat vain kirjatuneille käyttäjille:
 

@@ -10,6 +10,11 @@ from application.comment.forms import CommentEditForm
 from application.auth.models import User
 from application.comment.models import Comment
 
+@app.route("/comment", methods=["GET"])
+@login_required
+def s():
+
+    return render_template("comment/index.html") 
 
 @app.route("/comment/<report_id>/<naturesite_id>", methods=["GET"])
 @login_required
@@ -65,17 +70,17 @@ def comment_change_description(report_id, naturesite_id, comment_id):
     r = Report.query.get(report_id)
 
     if not r:
-        return render_template("error.html",  message = "ERROR! Can't find the Report")  
+        return render_template("error.html",  message = "ERROR! Report not found")  
     
     n = NatureSite.query.get(naturesite_id)
     
     if not n:
-        return render_template("error.html",  message = "ERROR! Can't find the Nature site")
+        return render_template("error.html",  message = "ERROR! Nature site not found")
     
     c = Comment.query.get(comment_id)
 
     if not c:
-        return render_template("error.html",  message = "ERROR! Can't find the Comment")
+        return render_template("error.html",  message = "ERROR! Comment not found")
 
     form = CommentEditForm(request.form)
 
@@ -104,7 +109,6 @@ def delete_comment(report_id, naturesite_id, comment_id):
     
     if not n:
         return render_template("error.html",  message = "ERROR! Can't find the Nature site")
-
     
     c = Comment.query.get(comment_id)
 
