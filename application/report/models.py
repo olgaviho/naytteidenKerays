@@ -31,7 +31,7 @@ class Report(Base):
                     " LEFT JOIN Account ON Report.account_id = Account.id"
                     " LEFT JOIN Nature_site ON Report.naturesite_id = Nature_site.id"
                     " LEFT JOIN Comment ON Comment.report_id = report.id"
-                    " GROUP BY Report.id"
+                    " GROUP BY Report.id, Account.name"
                     ) 
     
         res=db.engine.execute(stmt)
