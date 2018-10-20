@@ -43,7 +43,7 @@ Luontokohteita selatessa voi klikata haluamansa luontokohteen nimeä, josta pä�
 Luontokohteita selatessa voi klikata luontokohteen nimen kohdalla olevaa linkkiä, josta pääsee katsomaan luotokohdetta tarkemmin Painamlla linkkia _edit nature site_ pääsee muokkaamaan kuvausta. Vain alkuperäisen luontokohteen luoja voi muuttaa kuvausta. Mikäli, yrittää muokata toisen luomaa luontokohdetta, päätyy kirjautumissivulle. Luontokohteen kuvausta voi muuttaa kirjoittamalla kohtaan _Write new description_ uuden kuvauksen ja painamalla painiketta _Change description_.
 
 ## Raportin luominen
-Kenen tahansa luomaan luontokohteeseen voi luoda uuden raportin. Uuden raportin voi luoda valitsemalla _Create new report_. Raportille pitää antaa otsikko sekä kuvaus ja sen jälkeen klikata painiketta _Add a new report_. Kuvaukseen voi kirjoittaa esimerkiksi mitä lintulajeja on havainnut vieraillessaan luontokohteella.
+Kenen tahansa luomaan luontokohteeseen voi luoda uuden raportin. Uuden raportin voi luoda valitsemalla _Create a new report_. Raportille pitää antaa otsikko sekä kuvaus ja sen jälkeen klikata painiketta _Add a new report_. Kuvaukseen voi kirjoittaa esimerkiksi mitä lintulajeja on havainnut vieraillessaan luontokohteella.
 
 ## Raportin muokkaaminen ja poistaminen
 Raportteja selatessa voi klikata kohtaa _edit report_, josta pääsee raportin muokkaussivulle. Kohtaan _New description_ voi kirjoittaa uuden kuvauksen ja, kun painaa painiketta _Change description_, muuttuu raportin kuvaus. Raportin voi poistaa raportin muokkaussivulta painamalla painiketta _Delete_. Vain omia raportteja voi muokata tai poistaa. Mikäli, yrittää muokata tai poistaa toisen luomaa raporttia, päätyy kirjautumissivulle.
@@ -62,10 +62,9 @@ Kommentteja selatessa voi kommenttia muokata painamalla linkkiä _Edit_, josta p
 
 Sovellukseen on jäänyt muutamia puutteita, esimerkiksi seuraavia asioita voisi vielä parantaa:
 
-- Koodissa on jonkun verran copypastea error -sivulle viemisen osalta
-- html sivuilla ei ole määritelty kieltä
+- Koodissa on jonkun verran copypastea _error_ -sivulle viemisen osalta
 - Sivutus ei ole käytössä
 
 # Oma kokemukseni tietokantasovelluksen teosta
 
-Opin valtavasti web-sovelluksen teosta, html:stä ja pythonista. Nämä eivät olleet minulle tuttuja etukäteen. Itse sovelluksen toiminnallisuuksien tekemiseen meni minulta valtavasti aikaa, joka aiheutti sen, ettei lopulta ollut tarpeeksi aikaa keskittyä esimerkiksi ulkoasun hiomiseen bootstrapin avulla tai sivutukseen. Viime tingassa tuli myös lisättyä tietokantaan indeksi ja error.html, jonne pitäisi päätyä aina kun polussa on virheellinen indeksi. Sovelluksen aihe siis mahdollisesti levisi minulle liian laajaksi.
+Opin valtavasti web-sovelluksen teosta, html:stä ja pythonista. Nämä eivät olleet minulle tuttuja etukäteen. Itse sovelluksen toiminnallisuuksien tekemiseen meni minulta valtavasti aikaa, joka aiheutti sen, ettei lopulta ollut tarpeeksi aikaa keskittyä esimerkiksi ulkoasun hiomiseen bootstrapin avulla tai sivutukseen. Kuitenkin lopputulos oli parempi, mitä osasin aluksi odottaa.
