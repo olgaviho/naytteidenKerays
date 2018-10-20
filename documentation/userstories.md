@@ -37,6 +37,8 @@ Toinen kysely kertoo, millaisia raportteja järjestelmään on luotu. Raporteist
 SELECT Report.title, Account.name, Report.description, Nature_site.name FROM Report"
                     " LEFT JOIN Account ON Report.account_id = Account.id"
                     " LEFT JOIN Nature_site ON Report.naturesite_id = Nature_site.id") 
+                    " LEFT JOIN Comment ON Comment.report_id = report.id"
+                    " GROUP BY Report.id, Account.username, Nature_site.name"
 ```
 
 
@@ -76,7 +78,7 @@ description='Hanhet valmistelemassa muuttomatkaa etelään' WHERE report.id = 18
 - Kirjautunut käyttäjä voi kirjoittaa kommentin raporttiin.
 ```
 INSERT INTO comment (date_created, date_modified, text, account_id, report_id) 
-VALUES (CURRENT_TIMESTAMP, CURRENT_TIMESTAMP,'Hanhien seassa oli myös muita vesilintuja', 1, '18')
+VALUES (CURRENT_TIMESTAMP, CURRENT_TIMESTAMP,'Hanhien seassa oli myös muita vesilintuja', 1, 18)
 ```
 
 - Kirjautunut käyttäjä voi muokata kommenttiaan.
